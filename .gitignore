@@ -1,4 +1,5 @@
 *~
+*.backup
 logs/*
 *.pdf
 .DS_STORE
