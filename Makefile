@@ -22,9 +22,9 @@ dvi: ${LATEX} bib
 	latex ${LATEX}
 
 bib: ${LATEX}
-	#latex ${LATEX}
-	#bibtex ${FILE}
-	#latex ${LATEX}
+	latex ${LATEX}
+	bibtex ${FILE}
+	latex ${LATEX}
 
 clean:
 	rm -rf logs
