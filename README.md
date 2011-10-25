@@ -8,4 +8,5 @@ A base para o nosso documento pode ser encontrado [aqui](http://www.inf.ufpr.br/
 * <del>Criar bibliografia</del>
 * Buscar referências
 * Dividir as tarefas de cada um no projeto
+* FAzer cronograma
 * ??
