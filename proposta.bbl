@@ -1,22 +1,32 @@
 \begin{thebibliography}{1}
 
-\bibitem{Bakshi:2010p24702}
-A~Bakshi and B~Yogesh.
+\bibitem{Zhang:11}
+Z.~Chao-yang.
+\newblock Dos attack analysis and study of new measures to prevent.
+\newblock In {\em Intelligence Science and Information Engineering (ISIE), 2011
+  International Conference on}, pages 426 --429, aug. 2011.
+
+\bibitem{Zuckerman:10}
+E.~Zuckerman, H.~Roberts, R.~McGrady, J.~York, and J.~G.~Palfrey Jr.
+\newblock {2010 Report on Distributed Denial of Service (DDos) Attacks}.
+\newblock {\em Berkman Center Research Publication No. 2010-16}, 2010.
+
+\bibitem{Zhang:10}
+Q.~Zhang, L.~Cheng, and R.~Boutaba.
+\newblock Cloud computing: state-of-the-art and research challenges.
+\newblock {\em Journal of Internet Services and Applications}, 1:7--18, 2010.
+
+\bibitem{Soon:10}
+Soon~Hin Khor and Akihiro Nakao.
+\newblock spow: On-demand cloud-based eddos mitigation mechanism.
+\newblock {\em HotDep (Fifth Workshop on Hot Topics in System Dependability)},
+  2009.
+
+\bibitem{Bakshi:10}
+A.~Bakshi and B.~Yogesh1.
 \newblock Securing cloud from ddos attacks using intrusion detection system in
   virtual machine.
-\newblock {\em Communication Software and Networks, 2010. ICCSN '10. Second
-  International Conference on}, pages 260 -- 264, 2010.
-
-\bibitem{Khor:2009p24701}
-SH~Khor and Akihiro Nakao.
-\newblock spow: On-demand cloud-based eddos mitigation mechanism.
-\newblock {\em Fifth Workshop on Hot Topics in System Dependability}, Jan 2009.
-
-\bibitem{Kim}
-Hyun~Jong Kim, Jong~Chan Kim, Seong~Gon Choi, Tae~Soo Jeong, and Sung~Soo Kang.
-\newblock Thedelaymeasurementusingthertcp for real-time service in interworking
-  environment.
-\newblock {\em Advanced Communication Technology, The 9th International
-  Conference on}, pages 1153 -- 1157, 2007.
+\newblock In {\em Communication Software and Networks, 2010. ICCSN '10. Second
+  International Conference on}, pages 260 --264, feb. 2010.
 
 \end{thebibliography}
