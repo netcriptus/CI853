@@ -21,7 +21,7 @@
 
 {
 \begin{center}
-{\LARGE \textbf{Arquitetura para Mitiga\cc\~ao de Ataques DDoS}}
+{\LARGE \textbf{Arquitetura para Mitiga\c{c}~{a}o de Ataques DDoS}}
 \vskip 0.5cm
 {\Large Cinara, Fernando Cezar, Fernando Gielow, Nadine}
 \end{center}
@@ -47,7 +47,7 @@ acarretam na alocação de uma quantidade imensa de recursos, capazes de
 suprir todas as requisições que chegam ao servidor, independente de serem
 clientes legítimos ou atacantes. Embora esta abordagem consiga tratar ataques
 DDoS para determinados limites, é uma abordagem custosa, pois todos os recursos
-utilizados nesta tentativa de mitigação ter\~ao acarretar\~ao em custos
+utilizados nesta tentativa de mitigação acarretar\~ao em custos
 \cite{Soon:10}.
 
 O trabalho \cite{Bakshi:10} prop\~oe tratar este cen\'ario de ataques através da
@@ -61,22 +61,29 @@ genuínos sempre responderão, o que nem sempre condiz com a realidade.
 
 \section{Objetivo}
 Este trabalho de pesquisa gerar\'a uma arquitetura para mitigação de ataques de
-DDoS executados sobre uma aplicação armazenada em uma \emph{cloud}. Esta
-arquitetura, dever\'a monitorar o tr\'afego da aplica\cc\~ao e quando detectar
+DDoS executados sobre uma aplicação hospedada em uma \emph{cloud}. Esta
+arquitetura, dever\'a monitorar o tr\'afego da aplica\c{c}~{a}o e quando
+detectar
 ocorrencia de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova
-aplica\cc\~ao evitando que tr\'afego malicioso a alcance.
+aplica\c{c}~{a}o evitando que tr\'afego malicioso a alcance.
 
-O objetivo deste trabalho é apresentar uma proposta de um esquema de mitigação
-de ataques DDoS para aplicações hospedadas em \emph{clouds}. Este esquema será
-composto pelos seguintes módulos:
+Esta arquitetura será composta pelos seguintes módulos:
 \begin{enumerate}[i]
   \item detecção de comportamento similar a ataques DDoS;
   \item redirecionador de tráfego;
   \item gerenciador de \emph{blacklist};
-  \item instanciador de nova aplica\cc\~ao.
+  \item instanciador de nova aplica\c{c}~{a}o.
 \end{enumerate}  
 
-O módulo (i) observará proativamente o padrão de tráfego de entrada, visando detectar um ataque DDoS. Caso um ataque seja detectado, será criada uma nova instância da aplicação em uma outra instância de servidor no \emph{cloud}, etapa realizada pelo m\'odulo (iv), consequentemente com um endereço IP diferente. Desta forma, o módulo (ii) será responsável por tratar todo o tráfego de entrada, informando o endereço do novo servidor, e inserindo o IP origem da requisição à uma \emph{blacklist}, através do módulo (iii). Desta maneira, o atacante não afetará a nova instância da aplicação, pois ele não interpretará as respostas que informam o IP da nova instância. 
+O módulo (i) observará proativamente o padrão de tráfego de entrada, visando
+detectar um ataque DDoS. Caso um ataque seja detectado, será criada uma nova
+instância da aplicação em uma outra instância de servidor no \emph{cloud}, etapa
+realizada pelo m\'odulo (iv), consequentemente com um endereço IP diferente.
+Desta forma, o módulo (ii) será responsável por tratar todo o tráfego de
+entrada, informando o endereço do novo servidor, e inserindo o IP origem da
+requisição à uma \emph{blacklist}, através do módulo (iii). Desta maneira, o
+atacante não afetará a nova instância da aplicação, pois ele não interpretará as
+respostas que informam o IP da nova instância. 
 
 Estamos estudando a implementação de tal mecanismo, sendo que ele possivelmente
 será implementado e testado nos serviços \emph{cloud} disponibilizados pela
@@ -86,27 +93,30 @@ pequeno porte.
 
 
 \section{Metodologia}
-A pesquisa empregar\'a metodologia baseada em implementa\cc\~ao e medidas de
-efici\^encia da solu\cc\~ao proposta em mitigar as requisi\cc\~oes geradas pelo
+A pesquisa empregar\'a metodologia baseada em implementa\c{c}~{a}o e medidas de
+efici\^encia da solu\c{c}~{a}o proposta em mitigar as requisi\cc\~oes geradas
+pelo
 tipo de ataque . Para que os objetivos sejam atingidos, a metodologia dever\'a
 compreender etapas como pesquisa bibliogr\'afica para levantamento de traballhos
-correlatos. Pela avalia\cc\~ao destes trabalhos ser\'a poss\'ivel classificar as
+correlatos. Pela avalia\c{c}~{a}o destes trabalhos ser\'a poss\'ivel classificar
+as
 solu\cc\~oes aplicadas tanto para detectar como para controlar ataques de DDoS,
 especificamente para ambientes de \emph{cloud}. Tendo como refer\^encia as
 solu\cc\~oes aplicadas e os problemas ainda existentes, nosso trabalho buscar\'a
 alternativas capazes de efetivamente trazer melhorias ao problema levantado.
-Esta melhorias se\~ao aplicadas em um ambiente real de \emph{cloud} como Heroku
+Estas melhorias ser\~ao aplicadas em um ambiente real de \emph{cloud} como
+Heroku, Amazon
 ou Linode e monitoradas quanto a sua efici\^encia em n\~ao causar falha na
-execu\cca\~o da aplica\cc\~ao e em repassar a ela, apenas requisições
+execu\cca\~o da aplica\c{c}~{a}o e em repassar a ela, apenas requisições
 confi\'aveis.
 
 
-\section{Proposta de Solu\cc\~ao}
+\section{Proposta de Solu\c{c}~{a}o}
 Inicialmente, nossa proposta compreender\'a o uso de tratamento de tr\'afego
-para identifica\cc\~ao de 
+para identifica\c{c}~{a}o de 
 
-\section{Avalia\cc\~ao}
-A etapa de avalia\cc\~ao da proposta ser\'a realizada por monitoramento do 
+\section{Avalia\c{c}~{a}o}
+A etapa de avalia\c{c}~{a}o da proposta ser\'a realizada por monitoramento do 
 
 % [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
 %in Virtual Machine
@@ -116,7 +126,7 @@ A etapa de avalia\cc\~ao da proposta ser\'a realizada por monitoramento do
   \begin{itemize}
   \item Trabalhos relacionados aos assuntos da pesquisa
   \end{itemize}
- \item Implementa\c\cc\~ao
+ \item Implementa\c\c{c}~{a}o
   \begin{itemize}
   \end{itemize}
  \item Teste de Desempenho 
