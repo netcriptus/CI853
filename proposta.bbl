@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{Bakshi:2010p24702}
+A~Bakshi and B~Yogesh.
+\newblock Securing cloud from ddos attacks using intrusion detection system in
+  virtual machine.
+\newblock {\em Communication Software and Networks, 2010. ICCSN '10. Second
+  International Conference on}, pages 260 -- 264, 2010.
+
 \bibitem{Khor:2009p24701}
 SH~Khor and Akihiro Nakao.
 \newblock spow: On-demand cloud-based eddos mitigation mechanism.
