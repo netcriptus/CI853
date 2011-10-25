@@ -21,38 +21,90 @@
 
 {
 \begin{center}
-{\LARGE \textbf{Projeto da disciplina de Gerência de Redes}}
+{\LARGE \textbf{Arquitetura para Mitiga\cc\~ao de Ataques DDoS}}
 \vskip 0.5cm
 {\Large Cinara, Fernando Cezar, Fernando Gielow, Nadine}
 \end{center}
 }
 
-\section{Proposta inicial}
+\section{Proposta Inicial}
 
 % introduzir ataques DDoS e a importância do problema
-Um ataque DDoS (\textit{Distributed Denial of Service}) consiste, genericamente, da tentativa de tornar indisponíveis os recursos oferecidos por alguma entidade [ref]. Na internet, este tipo de ataque tem se tornado cada vez mais comum, visando \emph{websites} de grandes empresas. Recentemente ocorreram ataques aos \emph{websites} da Amazon, do Paypal e da bandeira de cartões de crédito Visa [ref], que acarretaram grandes prejuízos a essas empresas.
+Um ataque DDoS (\emph{Distributed Denial-of-Service})
+ consiste, genericamente, da tentativa de tornar indisponíveis
+os recursos oferecidos por alguma entidade \cite{Zhang:11}. Na Internet, este
+tipo de ataque tem se tornado cada vez mais comum, visando \emph{websites} de
+grandes empresas. Recentemente, houveram ataques aos \emph{websites} da Amazon,
+do Paypal e da bandeira de cartões de crédito Visa \cite{Zuckerman:10}, que
+acarretaram em grandes prejuízos à estas empresas.
 
-Diversas dificuldades são encontradas ao se tentar mitigar os efeitos destes ataques. Em servidores de hospedagem tradicionais, os recursos são limitados e, assim, quando o número de requisições ultrapassa um patamar máximo não há como continuar respondendo efetivamente às requisições. Em abordagens mais avançadas, como é o caso de hospedagem em \emph{clouds} [ref], tais ataques resultam na alocação de uma quantidade imensa de recursos, afim de tratar todas as requisições que chegam ao servidor, independente de serem clientes legítimos ou atacantes. Embora esta abordagem consiga tratar ataques DDoS até dados limites, é uma abordagem custosa, pois todos os recursos utilizados nesta tentativa de mitigação serão cobrados~\cite{Khor:2009p24701}.
+Diversas dificuldades são encontradas ao se tentar mitigar os efeitos destes
+ataques. Em servidores de hospedagem tradicionais, os recursos são limitados e,
+assim, quando o número de requisições ultrapassa um patamar máximo, não há como
+continuar respondendo efetivamente as requisições. Em abordagens mais avançadas,
+como é o caso de hospedagem em \emph{clouds} \cite{Zhang:10}, tais ataques
+acarretam na alocação de uma quantidade imensa de recursos, capazes de
+suprir todas as requisições que chegam ao servidor, independente de serem
+clientes legítimos ou atacantes. Embora esta abordagem consiga tratar ataques
+DDoS para determinados limites, é uma abordagem custosa, pois todos os recursos
+utilizados nesta tentativa de mitigação ter\~ao acarretar\~ao em custos
+\cite{Soon:10}.
 
-O trabalho~\cite{Bakshi:2010p24702} tenta tratar esses ataques através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, tenta-se identificar os atacantes através de um PING --- que se não for respondido, seu detinatário é considerado como um atacante. Desta maneira, apenas os clientes que responderem ao PING serão redirecionados para a nova instância da aplicação. Entretanto, tal abordagem depende da premissa que atacantes jamais responderão a PING's e que clientes genuínos sempre responderão, o que nem sempre condiz com a realidade. Sabemos que muitas provedoras de acesso à Internet bloqueiam mensagens ICMP na rede doméstica~\cite{Kim}.
+O trabalho \cite{Bakshi:10} prop\~oe tratar este cen\'ario de ataques através da
+criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é
+detectado, a proposta busca detectar os atacantes através de um PING -
+caso o possível atacante não responda ao PING, ele é considerado como um
+atacante. Desta maneira, apenas os clientes que responderem ao PING serão
+redirecionados para a nova instância da aplicação. Entretanto, tal abordagem
+depende da premissa que atacantes jamais responderão a PINGs e que clientes
+genuínos sempre responderão, o que nem sempre condiz com a realidade. 
 
 % objetivo
-O objetivo deste trabalho é apresentar uma proposta de um esquema de mitigação de ataques DDoS para aplicações hospedadas em \emph{clouds}. Este esquema será composto pelos seguintes módulos:
+O objetivo deste trabalho é apresentar uma proposta de um esquema de mitigação
+de ataques DDoS para aplicações hospedadas em \emph{clouds}. Este esquema será
+composto pelos seguintes módulos: (i) detecção de comportamento similar a
+ataques DDoS; (ii) redirecionador de tráfego; (iii) gerenciador de
+\emph{blacklist}; (iv) instanciador de nova aplica\cc\~ao. O módulo (i)
+observará proativamente o padrão de tráfego de entrada, visando detectar um
+ataque DDoS. Caso um ataque seja detectado, será criada uma nova instância da
+aplicação em uma outra instância de servidor no \emph{cloud}, etapa realizada
+pelo m\'odulo (iv), consequentemente com um endereço IP diferente. Desta forma,
+o módulo (ii) será responsável por tratar todo o tráfego de entrada, informando
+o endereço do novo servidor, e inserindo o IP origem da requisição à uma
+\emph{blacklist}, através do módulo (iii). Desta maneira, o atacante não afetará
+a nova instância da aplicação, pois ele não interpretará as respostas que
+informam o IP da nova instância. 
 
-\begin{enumerate}[i]
-  \item detecção de comportamento similar a ataques DDoS;
-  \item redirecionador de tráfego;
-  \item gerenciador de \emph{blacklist}. 
-\end{enumerate}
+Estamos estudando a implementação de tal mecanismo, sendo que ele possivelmente
+será implementado e testado nos serviços \emph{cloud} disponibilizados pela
+Amazon [ref]. Ao final da presente pesquisa, ser\'a avaliado o
+desempenho do mecanismo proposto para tratar ataques DDoS em ambientes de
+pequeno porte.
 
-O módulo (i) observará proativamente o padrão de tráfego de entrada, visando detectar um ataque DDoS. Caso um ataque seja detectado, será criada uma nova instância da aplicação em uma outra instância de servidor \emph{cloud}, consequentemente com um endereço IP diferente. Desta forma, o módulo (ii) será responsável por tratar todo o tráfego de entrada, informando o endereço do novo servidor, e inserindo o IP origem da requisição à uma \emph{blacklist}, através do módulo (iii). Desta maneira, o atacante não afetará a nova instância da aplicação, pois ele não interpretará as respostas que informam o IP da nova instância. 
+\section{Objetivo}
 
-Estamos estudando a implementação de tal mecanismo, sendo que ele possivelmente será implementado e testado nos serviços \emph{cloud} disponibilizados pela Amazon [ref]. Serão apresentados resultados que demonstram a eficiência do mecanismo em tratar ataques DDoS de pequenos portes.
+\section{Metodologia}
+
+\section{Proposta de Solu\cc\~ao}
+
+% [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
+%in Virtual Machine
+\section{Etapas da Proposta}
+\begin{itemize}
+ \item Pesquisa
+  \begin{itemize}
+  \item Trabalhos relacionados aos assuntos da pesquisa
+  \end{itemize}
+ \item Implementa\c\cc\~ao
+  \begin{itemize}
+  \end{itemize}
+ \item Teste de Desempenho 
+  \begin{itemize}
+  \end{itemize}
+\end{itemize}
 
 
-
-
-\bibliographystyle{plain}
+\newpage
+\bibliographystyle{unsrt}
 \bibliography{proposta}
-
 \end{document}
