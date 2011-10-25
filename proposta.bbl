@@ -12,4 +12,11 @@ SH~Khor and Akihiro Nakao.
 \newblock spow: On-demand cloud-based eddos mitigation mechanism.
 \newblock {\em Fifth Workshop on Hot Topics in System Dependability}, Jan 2009.
 
+\bibitem{Kim}
+Hyun~Jong Kim, Jong~Chan Kim, Seong~Gon Choi, Tae~Soo Jeong, and Sung~Soo Kang.
+\newblock Thedelaymeasurementusingthertcp for real-time service in interworking
+  environment.
+\newblock {\em Advanced Communication Technology, The 9th International
+  Conference on}, pages 1153 -- 1157, 2007.
+
 \end{thebibliography}
