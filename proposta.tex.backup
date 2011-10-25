@@ -82,35 +82,28 @@ desempenho do mecanismo proposto para tratar ataques DDoS em ambientes de
 pequeno porte.
 
 \section{Objetivo}
-Este trabalho de pesquisa gerar\'a uma arquitetura para mitigação de ataques de
-DDoS executados sobre uma aplicação armazenada em uma \emph{cloud}. Esta
-arquitetura, dever\'a monitorar o tr\'afego da aplica\cc\~ao e quando detectar
-ocorrencia de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova
-aplica\cc\~ao evitando que tr\'afego malicioso a alcance.
 
 
 \section{Metodologia}
 A pesquisa empregar\'a metodologia baseada em implementa\cc\~ao e medidas de
-efici\^encia da solu\cc\~ao proposta em mitigar as requisi\cc\~oes geradas pelo
-tipo de ataque . Para que os objetivos sejam atingidos, a metodologia dever\'a
-compreender etapas como pesquisa bibliogr\'afica para levantamento de traballhos
-correlatos. Pela avalia\cc\~ao destes trabalhos ser\'a poss\'ivel classificar as
-solu\cc\~oes aplicadas tanto para detectar como para controlar ataques de DDoS,
-especificamente para ambientes de \emph{cloud}. Tendo como refer\^encia as
-solu\cc\~oes aplicadas e os problemas ainda existentes, nosso trabalho buscar\'a
-alternativas capazes de efetivamente trazer melhorias ao problema levantado.
-Esta melhorias se\~ao aplicadas em um ambiente real de \emph{cloud} como Heroku
-ou Linode e monitoradas quanto a sua efici\^encia em n\~ao causar falha na
-execu\cca\~o da aplica\cc\~ao e em repassar a ela, apenas requisições
-confi\'aveis.
+efici\^encia da solu\cc\~ao proposta. Para que os objetivos sejam atingidos,
+a metodologia dever\'a compreender etapas como pesquisa bibliogr\'afica para
+levantamento de traballhos correlatos. Pela avalia\cc\~ao destes trabalhos
+ser\'a poss\'ivel classificar as solu\cc\~oes aplicadas tanto para detectar como
+para controlar ataques de DDoS, especificamente para ambientes de \emph{cloud}.
+Tendo como refer\^encia as solu\cc\~oes aplicadas e os problemas ainda
+existentes, nosso trabalho buscar\'a alternativas capazes de efetivamente
+trazer melhorias ao problema levantado. Esta melhorias se\~ao aplicadas em um
+ambiente real de \emph{cloud} como Heroku ou Linode e monitoradas quanto a sua
+efici\^encia em n\~ao causar falha na execu\cca\~o da aplica\cc\~ao e em
+repassar a ela, apenas requisições confi\'aveis.
 
 
 \section{Proposta de Solu\cc\~ao}
 Inicialmente, nossa proposta compreender\'a o uso de tratamento de tr\'afego
 para identifica\cc\~ao de 
 
-\section{Avalia\cc\~ao}
-A etapa de avalia\cc\~ao da proposta ser\'a realizada por monitoramento do 
+\section{}
 
 % [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
 %in Virtual Machine
