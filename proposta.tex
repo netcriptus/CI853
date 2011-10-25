@@ -59,7 +59,13 @@ redirecionados para a nova instância da aplicação. Entretanto, tal abordagem
 depende da premissa que atacantes jamais responderão a PINGs e que clientes
 genuínos sempre responderão, o que nem sempre condiz com a realidade. 
 
-% objetivo
+\section{Objetivo}
+Este trabalho de pesquisa gerar\'a uma arquitetura para mitigação de ataques de
+DDoS executados sobre uma aplicação armazenada em uma \emph{cloud}. Esta
+arquitetura, dever\'a monitorar o tr\'afego da aplica\cc\~ao e quando detectar
+ocorrencia de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova
+aplica\cc\~ao evitando que tr\'afego malicioso a alcance.
+
 O objetivo deste trabalho é apresentar uma proposta de um esquema de mitigação
 de ataques DDoS para aplicações hospedadas em \emph{clouds}. Este esquema será
 composto pelos seguintes módulos:
@@ -77,13 +83,6 @@ será implementado e testado nos serviços \emph{cloud} disponibilizados pela
 Amazon [ref]. Ao final da presente pesquisa, ser\'a avaliado o
 desempenho do mecanismo proposto para tratar ataques DDoS em ambientes de
 pequeno porte.
-
-\section{Objetivo}
-Este trabalho de pesquisa gerar\'a uma arquitetura para mitigação de ataques de
-DDoS executados sobre uma aplicação armazenada em uma \emph{cloud}. Esta
-arquitetura, dever\'a monitorar o tr\'afego da aplica\cc\~ao e quando detectar
-ocorrencia de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova
-aplica\cc\~ao evitando que tr\'afego malicioso a alcance.
 
 
 \section{Metodologia}
