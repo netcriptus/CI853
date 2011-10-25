@@ -62,18 +62,15 @@ genuínos sempre responderão, o que nem sempre condiz com a realidade.
 % objetivo
 O objetivo deste trabalho é apresentar uma proposta de um esquema de mitigação
 de ataques DDoS para aplicações hospedadas em \emph{clouds}. Este esquema será
-composto pelos seguintes módulos: (i) detecção de comportamento similar a
-ataques DDoS; (ii) redirecionador de tráfego; (iii) gerenciador de
-\emph{blacklist}; (iv) instanciador de nova aplica\cc\~ao. O módulo (i)
-observará proativamente o padrão de tráfego de entrada, visando detectar um
-ataque DDoS. Caso um ataque seja detectado, será criada uma nova instância da
-aplicação em uma outra instância de servidor no \emph{cloud}, etapa realizada
-pelo m\'odulo (iv), consequentemente com um endereço IP diferente. Desta forma,
-o módulo (ii) será responsável por tratar todo o tráfego de entrada, informando
-o endereço do novo servidor, e inserindo o IP origem da requisição à uma
-\emph{blacklist}, através do módulo (iii). Desta maneira, o atacante não afetará
-a nova instância da aplicação, pois ele não interpretará as respostas que
-informam o IP da nova instância. 
+composto pelos seguintes módulos:
+\begin{enumerate}[i]
+  \item detecção de comportamento similar a ataques DDoS;
+  \item redirecionador de tráfego;
+  \item gerenciador de \emph{blacklist};
+  \item instanciador de nova aplica\cc\~ao.
+\end{enumerate}  
+
+O módulo (i) observará proativamente o padrão de tráfego de entrada, visando detectar um ataque DDoS. Caso um ataque seja detectado, será criada uma nova instância da aplicação em uma outra instância de servidor no \emph{cloud}, etapa realizada pelo m\'odulo (iv), consequentemente com um endereço IP diferente. Desta forma, o módulo (ii) será responsável por tratar todo o tráfego de entrada, informando o endereço do novo servidor, e inserindo o IP origem da requisição à uma \emph{blacklist}, através do módulo (iii). Desta maneira, o atacante não afetará a nova instância da aplicação, pois ele não interpretará as respostas que informam o IP da nova instância. 
 
 Estamos estudando a implementação de tal mecanismo, sendo que ele possivelmente
 será implementado e testado nos serviços \emph{cloud} disponibilizados pela
