@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2011.4.4)  25 OCT 2011 15:55
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  25 OCT 2011 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -411,7 +411,7 @@ LaTeX Font Info:    ... okay on input line 19.
 ] (./proposta.aux) ) 
 Here is how much of TeX's memory you used:
  1907 strings out of 493748
- 24407 string characters out of 3143570
+ 24407 string characters out of 3143569
  87326 words of memory out of 3000000
  5201 multiletter control sequences out of 15000+200000
  5497 words of font info for 20 fonts, out of 3000000 for 9000
