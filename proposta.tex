@@ -1,4 +1,5 @@
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 12pt]{article}
+\usepackage{sbc-template}
 
 \usepackage{graphicx}
 \usepackage[brazil]{babel}
@@ -10,7 +11,8 @@
 \usepackage[tight,footnotesize]{subfigure}
 \usepackage{stfloats}
 \usepackage{enumerate}
-\usepackage[left=3cm,top=3cm,right=3cm,bottom=3cm]{geometry}
+% \usepackage[left=3cm,top=3cm,right=3cm,bottom=3cm]{geometry}
+
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -18,15 +20,33 @@
 
 \begin{document}
 
+\title{Arquitetura para Mitiga\c{c}\~{a}o de Ataques DDoS}
 
-{
-\begin{center}
-{\LARGE \textbf{Arquitetura para Mitiga\c{c}\~{a}o de Ataques DDoS}}
-\vskip 0.5cm
-{\Large Cinara Menegazzo, Fernando Cezar Bernardelli, \\ Fernando Henrique Gielow, Nadine
-Lipa Pari}
-\end{center}
+\author{
+Cinara Menegazzo\inst{1},
+Fernando Cezar Bernardelli\inst{1}, \\
+Fernando Henrique Gielow\inst{1},
+Nadine Lipa Pari\inst{1}
 }
+   
+
+   
+\address{Departamento de Informática -- Universidade Federal do Paraná\\
+  Caixa Postal 19.081 -- 81.531-980 -- Curitiba -- PR -- Brasil
+  \email{\{cmenegazzo,fcb06,fhgielow,nelpari\}@inf.ufpr.br}
+}     
+
+\maketitle
+
+
+% {
+% \begin{center}
+% {\LARGE \textbf{Arquitetura para Mitiga\c{c}\~{a}o de Ataques DDoS}}
+% \vskip 0.5cm
+% {\Large Cinara Menegazzo, Fernando Cezar Bernardelli, \\ Fernando Henrique Gielow, Nadine
+% Lipa Pari}
+% \end{center}
+% }
 
 \section{Introdu\c{c}\~{a}o}
 
@@ -86,7 +106,7 @@ aplica\c{c}\~oes da Internet do futuro com sistemas complexos e robustos como
 solu\c{c}\~oes para este cen\'ario, pois o poder de
 alocar recursos para suportar um ataque deste tipo agora torna-se
 poss\'ivel, por\'em cresce tamb\'em os custos do usu\'ario por eles, o que
-carateriza-se como eDDoS (\emph{economic} DDoS)~\cite{Soon:10}.
+carateriza-se como eDDoS (\emph{economic Distributed Denial of Service})~\cite{Soon:10}.
   
 Apesar de ataques de DDoS j\'a serem bastante pesquisados e algumas propostas
 de mitiga\c{c}\~ao j\'a terem sido divulgadas como em (\cite{Zhang:11,
@@ -155,7 +175,7 @@ atacante não afetará a nova instância da aplicação, pois ele não interpret
 respostas que informam o IP da nova instância.
 
 
-\section{Metodologia}
+\section{Descri\c{c}\~{a}o da solu\c{c}\~{a}o}
 A pesquisa empregar\'a metodologia baseada em implementa\c{c}\~{a}o e medição da
 efici\^encia da solu\c{c}\~{a}o, que se propõem a mitigar o impacto causado pelo
 tipo de ataque DDoS. Para que os objetivos sejam atingidos, a metodologia
@@ -185,7 +205,7 @@ confi\'aveis.
 %{\Large \textbf{Changeme!} }\emph{Será que não é melhor cortar essa seção?
 %Seria muito redundante com a seção Objetivo..}
 
-\section{Avalia\c{c}\~{a}o}
+\section{Descri\c{c}\~{a}o da Avalia\c{c}\~{a}o}
 A etapa de avalia\c{c}\~{a}o da proposta consistirá principalmente na análise
 da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for devidamente
 mitigado, as requisições de atacantes serão ignoradas, após eles serem introduzidos na \emph{blacklist}
@@ -198,6 +218,9 @@ Com isso, para a análise, serão utilizadas ferramentas que geram requisições
 Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para requisições atendidas}, \textbf{taxa de requisições atendidas com relação ao número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
 
 \section{Etapas da Proposta}
+
+A proposta é composta por três principais fases, pesquisa, implementação e avaliação de desempenho. Estas fases são detalhadas nos tópicos a seguir:
+
 \begin{itemize}
  \item Pesquisa
   \begin{itemize}
@@ -210,14 +233,14 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
 
  \item Implementa\c{c}\~{a}o
   \begin{itemize}
-      \item Módulo (i): analizador de tráfego;
-	  \item Módulo (ii): redirecionador de tráfego;
-	  \item Módulo (iii): gerenciador de \emph{blacklist};
-	  \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
+      \item Módulo (i): analizador de tráfego
+	  \item Módulo (ii): redirecionador de tráfego
+	  \item Módulo (iii): gerenciador de \emph{blacklist}
+	  \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o
 	  \item \emph{Dummy-application}
   \end{itemize}
 
- \item Teste de Desempenho 
+ \item Avaliação de Desempenho 
   \begin{itemize}
     \item Definição de cenários
 	\item Domínio das ferramentas para geração de requisições
@@ -228,6 +251,7 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
 
 
 % \newpage
-\bibliographystyle{unsrt}
+% \bibliographystyle{unsrt}
+\bibliographystyle{sbc}
 \bibliography{proposta}
 \end{document}
