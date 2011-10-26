@@ -85,24 +85,24 @@ aplica\c{c}\~oes da Internet do futuro com sistemas complexos e robustos como
 \emph{clouds}. Assuntos como ataques de DDoS ainda carecem de boas
 solu\c{c}\~oes para este cen\'ario, pois o poder de
 alocar recursos para suportar um ataque deste tipo agora torna-se
-poss´ivel, por´em cresce tamb´em os custos do usuário por eles, o que
+poss\'ivel, por\'em cresce tamb\'em os custos do usu\'ario por eles, o que
 carateriza-se como eDDoS (\emph{economic} DDoS)~\cite{Soon:10}.
   
 Apesar de ataques de DDoS j\'a serem bastante pesquisados e algumas propostas
-de mitiga\c{c}\\~ao j\'a terem sido divulgadas, ao se trabalhar em cen\'arios de
-\emph{clouds} os aspectos de mitiga\c{c}\\~ao ainda est\~ao em aberto, pois
+de mitiga\c{c}\~ao j\'a terem sido divulgadas, ao se trabalhar em cen\'arios de
+\emph{clouds} os aspectos de mitiga\c{c}\~ao ainda est\~ao em aberto, pois
 apenas estender os recursos torna-se um recurso custoso e a melhor
-solu\c{c}\~ao ainda dever\'a ser encontrada . Portanto, a mitiga\c{c}\\~ao de
+solu\c{c}\~ao ainda dever\'a ser encontrada . Portanto, a mitiga\c{c}\~ao de
 DDoS em \emph{clouds} ainda demandam pesquisas.
 
 
 %ainda seja vulnerável a tais ataques. Ainda assim, foi observado
-que as soluções atuais convergem na vasta maioria para o tratamento de ataques
-através da maior alocação de recursos, impactando economicamente as empresas
-atacadas e não garantindo a efetiva mitigação dos ataques. As poucas soluções
-que não se baseiam inteiramente na maior alocação de recursos,
-como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são
-verdadeiras.
+% que as soluções atuais convergem na vasta maioria para o tratamento de ataques
+% através da maior alocação de recursos, impactando economicamente as empresas
+% atacadas e não garantindo a efetiva mitigação dos ataques. As poucas soluções
+% que não se baseiam inteiramente na maior alocação de recursos,
+% como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são
+% verdadeiras.
 
 \section{Objetivo}
 Baseando-se no cen\'ario de problemas levantado na introdu\c{c}\~{a}o, este
@@ -176,29 +176,6 @@ confi\'aveis.
 
 \section{Avalia\c{c}\~{a}o}
 A etapa de avalia\c{c}\~{a}o da proposta consistirá principalmente na análise
-da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for
-devidamente
-mitigado, as requisições de atacantes serão ignoradas, após eles serem
-introduzidos na \emph{blacklist}
-e, assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas
-clientes legítimos
-para o novo servidor.
-
-Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao
-servidor. Como exemplos, o comando
-\emph{curl} pode ser utilizado em linha de comando para gerar uma requisição
-HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar
-diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que
-permite a especificação do número de requisições que devem ser realizadas, a
-concorrência destas requisições, o tempo máximo que se deve esperar por
-respostas, e diversos outros parâmetros.
-
-Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para
-requisições atendidas}, \textbf{taxa de requisições atendidas com relação ao
-número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acordo
-com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba
-tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem
-consideradas, de acordo com a pesquisa que se sucederá.
 
 % [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
 %in Virtual Machine
@@ -208,23 +185,16 @@ consideradas, de acordo com a pesquisa que se sucederá.
   \begin{itemize}
     % \item Levantamento de trabalhos relacionados
     \item Estudo de mecanismos para mitiga\c{c}\~{a}o de ataques DDoS
-\item Levantamento de métricas para análise de desempenho
-\item Pesquisa sobre algoritmos para detectar possíveis ataques DDoS
-\item Pesquisa sobre ferramentas para geração de requisições
   \end{itemize}
 
  \item Implementa\c{c}\~{a}o
   \begin{itemize}
-      \item Módulo (i): analizador de tráfego;
+       \item Módulo (i): analizador de tráfego;
 \item Módulo (ii): redirecionador de tráfego;
 \item Módulo (iii): gerenciador de \emph{blacklist};
 \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
 \item \emph{Dummy-application}
-  \end{itemize}
-
  \item Teste de Desempenho
-  \begin{itemize}
-    \item Definição de cenários
 \item Domínio das ferramentas para geração de requisições
 \item Realização da experimentação
 \item Análise dos resultados e elaboração de gráficos
