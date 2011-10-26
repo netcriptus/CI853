@@ -97,12 +97,12 @@ DDoS em \emph{clouds} ainda demandam pesquisas.
 
 
 %ainda seja vulnerável a tais ataques. Ainda assim, foi observado
-que as soluções atuais convergem na vasta maioria para o tratamento de ataques
-através da maior alocação de recursos, impactando economicamente as empresas
-atacadas e não garantindo a efetiva mitigação dos ataques. As poucas soluções
-que não se baseiam inteiramente na maior alocação de recursos,
-como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são
-verdadeiras.
+% que as soluções atuais convergem na vasta maioria para o tratamento de ataques
+% através da maior alocação de recursos, impactando economicamente as empresas
+% atacadas e não garantindo a efetiva mitigação dos ataques. As poucas soluções
+% que não se baseiam inteiramente na maior alocação de recursos,
+% como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são
+% verdadeiras.
 
 \section{Por que DDoS?}
 Dos artigos pesquisados com soluções sobre DDoS (\cite{Zhang:11, Zuckerman:10, Soon:10}), todos respondem um ataque dessa natureza com alocação de mais recursos. Esse ainda é um problema em aberto; como o DDoS é um ataque bruto, responder com a alocação de mais recursos funciona até um certo limite de tamanho do ataque. Para contornar a solução, o atacante precisa apenas aumentar o tamanho da rede que ele controla, tarefa simples segundo dados recentes sobre o crescimento de redes zumbi \cite{Chao:09}.
@@ -192,31 +192,6 @@ confi\'aveis.
 
 \section{Avalia\c{c}\~{a}o}
 A etapa de avalia\c{c}\~{a}o da proposta consistirá principalmente na análise
-<<<<<<< HEAD
-da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for
-devidamente
-mitigado, as requisições de atacantes serão ignoradas, após eles serem
-introduzidos na \emph{blacklist}
-e, assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas
-clientes legítimos
-para o novo servidor.
-
-Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao
-servidor. Como exemplos, o comando
-\emph{curl} pode ser utilizado em linha de comando para gerar uma requisição
-HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar
-diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que
-permite a especificação do número de requisições que devem ser realizadas, a
-concorrência destas requisições, o tempo máximo que se deve esperar por
-respostas, e diversos outros parâmetros.
-
-Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para
-requisições atendidas}, \textbf{taxa de requisições atendidas com relação ao
-número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acordo
-com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba
-tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem
-consideradas, de acordo com a pesquisa que se sucederá.
-=======
 da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for devidamente
 mitigado, as requisições de atacantes serão ignoradas, após eles serem introduzidos na \emph{blacklist}
 e, assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
@@ -226,7 +201,6 @@ Com isso, para a análise, serão utilizadas ferramentas que geram requisições
 \emph{curl} pode ser utilizado em linha de comando para gerar uma requisição HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que permite a especificação do número de requisições que devem ser realizadas, a concorrência destas requisições, o tempo máximo que se deve esperar por respostas, e diversos outros parâmetros.
 
 Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para requisições atendidas}, \textbf{taxa de requisições atendidas com relação ao número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
 
 % [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
 %in Virtual Machine
@@ -236,47 +210,26 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
   \begin{itemize}
     % \item Levantamento de trabalhos relacionados
     \item Estudo de mecanismos para mitiga\c{c}\~{a}o de ataques DDoS
-<<<<<<< HEAD
-\item Levantamento de métricas para análise de desempenho
-\item Pesquisa sobre algoritmos para detectar possíveis ataques DDoS
-\item Pesquisa sobre ferramentas para geração de requisições
-=======
 	\item Levantamento de métricas para análise de desempenho
 	\item Pesquisa sobre algoritmos para detectar possíveis ataques DDoS
 	\item Pesquisa sobre ferramentas para geração de requisições
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
   \end{itemize}
 
  \item Implementa\c{c}\~{a}o
   \begin{itemize}
-      \item Módulo (i): analizador de tráfego;
-<<<<<<< HEAD
-\item Módulo (ii): redirecionador de tráfego;
-\item Módulo (iii): gerenciador de \emph{blacklist};
-\item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
-\item \emph{Dummy-application}
+       \item Módulo (i): analizador de tráfego;
+		\item Módulo (ii): redirecionador de tráfego;
+		\item Módulo (iii): gerenciador de \emph{blacklist};
+		\item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
+		\item \emph{Dummy-application}
   \end{itemize}
 
  \item Teste de Desempenho
   \begin{itemize}
     \item Definição de cenários
-\item Domínio das ferramentas para geração de requisições
-\item Realização da experimentação
-\item Análise dos resultados e elaboração de gráficos
-=======
-	  \item Módulo (ii): redirecionador de tráfego;
-	  \item Módulo (iii): gerenciador de \emph{blacklist};
-	  \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
-	  \item \emph{Dummy-application}
-  \end{itemize}
-
- \item Teste de Desempenho 
-  \begin{itemize}
-    \item Definição de cenários
 	\item Domínio das ferramentas para geração de requisições
 	\item Realização da experimentação
 	\item Análise dos resultados e elaboração de gráficos
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
   \end{itemize}
 \end{itemize}
 
