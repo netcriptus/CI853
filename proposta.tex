@@ -67,13 +67,20 @@ detectar
 ocorrência de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova instância desta
 aplica\c{c}\~{a}o, garantindo que nenhum tr\'afego malicioso a alcance.
 
-Esta arquitetura será composta pelos seguintes módulos:
+Esta arquitetura, ilustrada na Figura~\ref{fig:arq}, será composta pelos seguintes módulos:
 \begin{enumerate}[i]
   \item analizador de tráfego;
   \item redirecionador de tráfego;
   \item gerenciador de \emph{blacklist};
   \item instanciador de nova aplica\c{c}\~{a}o.
 \end{enumerate}  
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.85\textwidth]{arquitetura.eps}
+	\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
+	\label{fig:arq}
+\end{figure}
 
 O módulo (i) observará proativamente o padrão de tráfego de entrada, visando
 detectar um ataque DDoS. Caso um ataque seja detectado, o m\'odulo (iv) criará uma nova
