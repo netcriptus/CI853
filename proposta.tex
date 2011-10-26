@@ -130,6 +130,8 @@ para o novo servidor.
 Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao servidor. Como exemplos, o comando 
 \emph{curl} pode ser utilizado em linha de comando para gerar uma requisição HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que permite a especificação do número de requisições que devem ser realizadas, a concorrência destas requisições, o tempo máximo que se deve esperar por respostas, e diversos outros parâmetros.
 
+Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para requisições atendidas}, \textbf{taxa de requisições atendidas com relação ao número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo "clientes", aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
+
 % [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
 %in Virtual Machine
 \section{Etapas da Proposta}
