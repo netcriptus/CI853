@@ -104,13 +104,6 @@ que não se baseiam inteiramente na maior alocação de recursos,
 como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são
 verdadeiras.
 
-\section{Por que DDoS?}
-Dos artigos pesquisados com soluções sobre DDoS (\cite{Zhang:11, Zuckerman:10, Soon:10}), todos respondem um ataque dessa natureza com alocação de mais recursos. Esse ainda é um problema em aberto; como o DDoS é um ataque bruto, responder com a alocação de mais recursos funciona até um certo limite de tamanho do ataque. Para contornar a solução, o atacante precisa apenas aumentar o tamanho da rede que ele controla, tarefa simples segundo dados recentes sobre o crescimento de redes zumbi \cite{Chao:09}.
-
-Com o uso de tecnologias de \emph{cloud} para hospedagem de serviços, o poder de alocar recursos para suportar um ataque do tipo DDoS cresceu muito, mas com isso surgiu um novo problema. O usuário paga pelos recursos sob demanda, o que significa que muitos recursos alocados significam custos maiores, dando origem ao termo eDDoS (\emph{economic} DDoS)~\cite{Soon:10}.
-
-A escolha deste tema é justificada, inicialmente, pela importância de se tratar este tipo de ataque. É cada vez mais comum a retaliação de grandes empresas através de ataques DDoS, que são de grande simplicidade e eficácia~\cite{ddosatks}. Não é concebível que servidores na internet do futuro, com o advento de sistemas complexos e robustos como \emph{clouds}, ainda seja vulnerável a tais ataques. Ainda assim, foi observado que as soluções atuais convergem na vasta maioria para o tratamento de ataques através da maior alocação de recursos, impactando economicamente as empresas atacadas e não garantindo a efetiva mitigação dos ataques. As poucas soluções que não se baseiam inteiramente na maior alocação de recursos, como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são verdadeiras.
-
 \section{Objetivo}
 Baseando-se no cen\'ario de problemas levantado na introdu\c{c}\~{a}o, este
 trabalho de pesquisa gerar\'a uma arquitetura para mitigação de ataques de
@@ -121,13 +114,9 @@ ocorrência de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova
 instância desta
 aplica\c{c}\~{a}o, garantindo que nenhum tr\'afego malicioso a alcance.
 
-<<<<<<< HEAD
 Esta arquitetura será composta pelos módulos abaixo e é ilustrada na
 Figura~\ref{fig:arq}, onde diferentes inst\^ancias de servidores na nuvem s\~ao
 representadas pelas caixas cinzas.
-=======
-Esta arquitetura será composta pelos módulos abaixo e é ilustrada na Figura~\ref{fig:arq}, sendo que as caixas cinzas representam diferentes instâncias de servidores nas nuvens.
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
 
 \begin{enumerate}[i]
   \item analizador de tráfego;
@@ -141,13 +130,6 @@ Esta arquitetura será composta pelos módulos abaixo e é ilustrada na Figura~\
 \includegraphics[width=0.85\textwidth]{arquitetura.eps}
 \caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
 \label{fig:arq}
-\end{figure}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.85\textwidth]{arquitetura.eps}
-	\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
-	\label{fig:arq}
 \end{figure}
 
 O módulo (i) observará proativamente o padrão de tráfego de entrada, visando
@@ -192,11 +174,8 @@ confi\'aveis.
 %{\Large \textbf{Changeme!} }\emph{Será que não é melhor cortar essa seção?
 %Seria muito redundante com a seção Objetivo..}
 
-{\Large \textbf{Changeme!} }\emph{Será que não é melhor cortar essa seção? Seria muito redundante com a seção Objetivo..}
-
 \section{Avalia\c{c}\~{a}o}
 A etapa de avalia\c{c}\~{a}o da proposta consistirá principalmente na análise
-<<<<<<< HEAD
 da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for
 devidamente
 mitigado, as requisições de atacantes serão ignoradas, após eles serem
@@ -220,17 +199,6 @@ número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acor
 com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba
 tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem
 consideradas, de acordo com a pesquisa que se sucederá.
-=======
-da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for devidamente
-mitigado, as requisições de atacantes serão ignoradas, após eles serem introduzidos na \emph{blacklist}
-e, assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
-para o novo servidor.
-
-Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao servidor. Como exemplos, o comando 
-\emph{curl} pode ser utilizado em linha de comando para gerar uma requisição HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que permite a especificação do número de requisições que devem ser realizadas, a concorrência destas requisições, o tempo máximo que se deve esperar por respostas, e diversos outros parâmetros.
-
-Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para requisições atendidas}, \textbf{taxa de requisições atendidas com relação ao número de clientes}, \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
 
 % [xx] = Securing cloud from DDOS Attacks using Intrusion Detection System
 %in Virtual Machine
@@ -240,21 +208,14 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
   \begin{itemize}
     % \item Levantamento de trabalhos relacionados
     \item Estudo de mecanismos para mitiga\c{c}\~{a}o de ataques DDoS
-<<<<<<< HEAD
 \item Levantamento de métricas para análise de desempenho
 \item Pesquisa sobre algoritmos para detectar possíveis ataques DDoS
 \item Pesquisa sobre ferramentas para geração de requisições
-=======
-	\item Levantamento de métricas para análise de desempenho
-	\item Pesquisa sobre algoritmos para detectar possíveis ataques DDoS
-	\item Pesquisa sobre ferramentas para geração de requisições
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
   \end{itemize}
 
  \item Implementa\c{c}\~{a}o
   \begin{itemize}
       \item Módulo (i): analizador de tráfego;
-<<<<<<< HEAD
 \item Módulo (ii): redirecionador de tráfego;
 \item Módulo (iii): gerenciador de \emph{blacklist};
 \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
@@ -267,20 +228,6 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
 \item Domínio das ferramentas para geração de requisições
 \item Realização da experimentação
 \item Análise dos resultados e elaboração de gráficos
-=======
-	  \item Módulo (ii): redirecionador de tráfego;
-	  \item Módulo (iii): gerenciador de \emph{blacklist};
-	  \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
-	  \item \emph{Dummy-application}
-  \end{itemize}
-
- \item Teste de Desempenho 
-  \begin{itemize}
-    \item Definição de cenários
-	\item Domínio das ferramentas para geração de requisições
-	\item Realização da experimentação
-	\item Análise dos resultados e elaboração de gráficos
->>>>>>> b6ce5ef37d09e5d2546a52ef943bb4ac66026606
   \end{itemize}
 \end{itemize}
 
