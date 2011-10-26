@@ -151,6 +151,7 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
 	  \item Módulo (ii): redirecionador de tráfego;
 	  \item Módulo (iii): gerenciador de \emph{blacklist};
 	  \item Módulo (iv): instanciador de nova aplica\c{c}\~{a}o.
+	  \item \emph{Dummy-application}
   \end{itemize}
 
  \item Teste de Desempenho 
@@ -163,12 +164,14 @@ Como métricas, podemos utilizar o \textbf{tempo de resposta do servidor para re
 \end{itemize}
 
 \section{Por que DDoS?}
-Dos artigos pesquisados com soluções sobre DDoS (\cite{Zhang:11} \cite{Zuckerman:10} \cite{Soon:10}) todos respondem um ataque dessa natureza com alocação de mais recursos. Esse ainda é um problema em aberto; como o DDoS é um ataque bruto, responder com a alocação de mais recursos funciona até um certo limite de tamanho do ataque. Para contornar a solução, o atacante precisa apenas aumentar o tamanho da rede que ele controla, tarefa simples segundo dados recentes sobre o crescimento de redes zumbi \cite{Chao:09}.
+Dos artigos pesquisados com soluções sobre DDoS (\cite{Zhang:11, Zuckerman:10, Soon:10}), todos respondem um ataque dessa natureza com alocação de mais recursos. Esse ainda é um problema em aberto; como o DDoS é um ataque bruto, responder com a alocação de mais recursos funciona até um certo limite de tamanho do ataque. Para contornar a solução, o atacante precisa apenas aumentar o tamanho da rede que ele controla, tarefa simples segundo dados recentes sobre o crescimento de redes zumbi \cite{Chao:09}.
 
-Com o uso de tecnologias de \emph{cloud} para hospedagem de serviços, o poder de alocar recursos para suportar um ataque do tipo DDoS cresceu muito, mas com isso surgiu um novo problema. O usuário paga por recursos sob demanda, o que significa que muitos recursos alocados significam custos maiores \cite{Soon:10}.
+Com o uso de tecnologias de \emph{cloud} para hospedagem de serviços, o poder de alocar recursos para suportar um ataque do tipo DDoS cresceu muito, mas com isso surgiu um novo problema. O usuário paga pelos recursos sob demanda, o que significa que muitos recursos alocados significam custos maiores, dando origem ao termo eDDoS (\emph{economic} DDoS)~\cite{Soon:10}.
+
+A escolha deste tema é justificada, inicialmente, pela importância de se tratar este tipo de ataque. É cada vez mais comum a retaliação de grandes empresas através de ataques DDoS, que são de grande simplicidade e eficácia~\cite{ddosatks}. Não é concebível que servidores na internet do futuro, com o advento de sistemas complexos e robustos como \emph{clouds}, ainda seja vulnerável a tais ataques. Ainda assim, foi observado que as soluções atuais convergem na vasta maioria para o tratamento de ataques através da maior alocação de recursos, impactando economicamente as empresas atacadas e não garantindo a efetiva mitigação dos ataques. As poucas soluções que não se baseiam inteiramente na maior alocação de recursos, como~\cite{Soon:10}, se mostraram inadequadas por premissas que nem sempre são verdadeiras.
 
 
-\newpage
+% \newpage
 \bibliographystyle{unsrt}
 \bibliography{proposta}
 \end{document}
