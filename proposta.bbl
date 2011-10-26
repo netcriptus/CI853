@@ -11,6 +11,10 @@ E.~Zuckerman, H.~Roberts, R.~McGrady, J.~York, and J.~G.~Palfrey Jr.
 \newblock {2010 Report on Distributed Denial of Service (DDos) Attacks}.
 \newblock {\em Berkman Center Research Publication No. 2010-16}, 2010.
 
+\bibitem{ddosatks}
+BBC News.
+\newblock http://www.bbc.co.uk/news/technology-11971259, Dec 2010.
+
 \bibitem{Zhang:10}
 Q.~Zhang, L.~Cheng, and R.~Boutaba.
 \newblock Cloud computing: state-of-the-art and research challenges.
@@ -27,6 +31,18 @@ A.~Bakshi and B.~Yogesh1.
 \newblock Securing cloud from ddos attacks using intrusion detection system in
   virtual machine.
 \newblock In {\em Communication Software and Networks, 2010. ICCSN '10. Second
-  International Conference on}, pages 260 --264, feb. 2010.
+  International Conference on}, pages 260 -- 264, feb. 2010.
+
+\bibitem{heroku}
+Heroku.
+\newblock http://www.heroku.com/.
+
+\bibitem{amazon}
+Amazon~Web Services.
+\newblock http://aws.amazon.com/.
+
+\bibitem{linode}
+Linode XEN~VPS Hosting.
+\newblock http://www.linode.com/.
 
 \end{thebibliography}
