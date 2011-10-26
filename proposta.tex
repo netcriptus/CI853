@@ -122,7 +122,12 @@ aplica\c{c}\~{a}o, garantindo que nenhum tr\'afego malicioso a alcance.
 
 Esta arquitetura será composta pelos módulos abaixo e é ilustrada na
 Figura~\ref{fig:arq}, onde diferentes inst\^ancias de servidores na nuvem s\~ao
-representadas pelas caixas cinzas.
+representadas pelas caixas cinzas,
+tal que as setas indicam relação e não fluxo de tráfego.
+As caixas azuis representam os módulos
+a serem implementados pela proposta, tal que não há forte comunicação com a
+aplicação, pois os módulos da arquitetura devem ser
+isolados, a fim de garantir a generalidade. 
 
 \begin{enumerate}[i]
   \item analizador de tráfego;
