@@ -41,9 +41,9 @@ acarretaram em grandes prejuízos à estas empresas.
 Diversas dificuldades são encontradas ao se tentar mitigar os efeitos destes
 ataques. Em servidores de hospedagem tradicionais, os recursos são limitados e,
 assim, quando o número de requisições ultrapassa um patamar máximo, não há como
-continuar respondendo efetivamente as requisições. Em abordagens mais avançadas,
+continuar respondendo efetivamente às requisições. Em abordagens mais avançadas,
 como é o caso de hospedagem em \emph{clouds} \cite{Zhang:10}, tais ataques
-acarretam na alocação de uma quantidade imensa de recursos, capazes de
+acarretam na alocação de uma quantidade imensa de recursos, as vezes até mesmo capazes de
 suprir todas as requisições que chegam ao servidor, independente de serem
 clientes legítimos ou atacantes. Embora esta abordagem consiga tratar ataques
 DDoS para determinados limites, é uma abordagem custosa, pois todos os recursos
@@ -52,9 +52,9 @@ utilizados nesta tentativa de mitigação acarretar\~ao em custos
 
 O trabalho \cite{Bakshi:10} prop\~oe tratar este cen\'ario de ataques através da
 criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é
-detectado, a proposta busca detectar os atacantes através de um PING -
-caso o possível atacante não responda ao PING, ele é considerado como um
-atacante. Desta maneira, apenas os clientes que responderem ao PING serão
+detectado, a proposta busca detectar os atacantes através de PINGs -
+caso um cliente suspeito de ser atacante não responder ao PING, ele é considerado como um
+atacante, de fato. Desta maneira, apenas os clientes que responderem ao PING serão
 redirecionados para a nova instância da aplicação. Entretanto, tal abordagem
 depende da premissa que atacantes jamais responderão a PINGs e que clientes
 genuínos sempre responderão, o que nem sempre condiz com a realidade. 
@@ -64,8 +64,8 @@ Este trabalho de pesquisa gerar\'a uma arquitetura para mitigação de ataques d
 DDoS executados sobre uma aplicação hospedada em uma \emph{cloud}. Esta
 arquitetura, dever\'a monitorar o tr\'afego da aplica\c{c}\~{a}o e quando
 detectar
-ocorrencia de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova
-aplica\c{c}\~{a}o evitando que tr\'afego malicioso a alcance.
+ocorrência de ataque de DDoS, ser\'a respons\'avel por instanciar uma nova instância desta
+aplica\c{c}\~{a}o, garantindo que nenhum tr\'afego malicioso a alcance.
 
 Esta arquitetura será composta pelos seguintes módulos:
 \begin{enumerate}[i]
@@ -76,14 +76,13 @@ Esta arquitetura será composta pelos seguintes módulos:
 \end{enumerate}  
 
 O módulo (i) observará proativamente o padrão de tráfego de entrada, visando
-detectar um ataque DDoS. Caso um ataque seja detectado, será criada uma nova
-instância da aplicação em uma outra instância de servidor no \emph{cloud}, etapa
-realizada pelo m\'odulo (iv), consequentemente com um endereço IP diferente.
-Desta forma, o módulo (ii) será responsável por tratar todo o tráfego de
+detectar um ataque DDoS. Caso um ataque seja detectado, o m\'odulo (iv) criará uma nova
+instância da aplicação em uma outra instância de servidor no \emph{cloud}, consequentemente com um endereço IP diferente.
+Com isso, o módulo (ii) será responsável por tratar todo o tráfego de
 entrada, informando o endereço do novo servidor, e inserindo o IP origem da
-requisição à uma \emph{blacklist}, através do módulo (iii). Desta maneira, o
+requisição à uma \emph{blacklist}, através do módulo (iii). Assim, o
 atacante não afetará a nova instância da aplicação, pois ele não interpretará as
-respostas que informam o IP da nova instância. 
+respostas que informam o IP da nova instância.
 
 
 \section{Metodologia}
