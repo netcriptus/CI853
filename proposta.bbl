@@ -1,48 +1,47 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 
-\bibitem{Zhang:11}
-Z.~Chao-yang.
-\newblock Dos attack analysis and study of new measures to prevent.
-\newblock In {\em Intelligence Science and Information Engineering (ISIE), 2011
-  International Conference on}, pages 426 --429, aug. 2011.
-
-\bibitem{Zuckerman:10}
-E.~Zuckerman, H.~Roberts, R.~McGrady, J.~York, and J.~G.~Palfrey Jr.
-\newblock {2010 Report on Distributed Denial of Service (DDos) Attacks}.
-\newblock {\em Berkman Center Research Publication No. 2010-16}, 2010.
-
-\bibitem{ddosatks}
-BBC News.
-\newblock http://www.bbc.co.uk/news/technology-11971259, Dec 2010.
-
-\bibitem{Zhang:10}
-Q.~Zhang, L.~Cheng, and R.~Boutaba.
-\newblock Cloud computing: state-of-the-art and research challenges.
-\newblock {\em Journal of Internet Services and Applications}, 1:7--18, 2010.
-
-\bibitem{Soon:10}
-Soon~Hin Khor and Akihiro Nakao.
-\newblock spow: On-demand cloud-based eddos mitigation mechanism.
-\newblock {\em HotDep (Fifth Workshop on Hot Topics in System Dependability)},
-  2009.
-
-\bibitem{Bakshi:10}
-A.~Bakshi and B.~Yogesh1.
+\bibitem[Bakshi and Yogesh1 2010]{Bakshi:10}
+Bakshi, A. and Yogesh1, B. (2010).
 \newblock Securing cloud from ddos attacks using intrusion detection system in
   virtual machine.
 \newblock In {\em Communication Software and Networks, 2010. ICCSN '10. Second
-  International Conference on}, pages 260 -- 264, feb. 2010.
+  International Conference on}, pages 260 -- 264.
 
-\bibitem{heroku}
+\bibitem[Chao-yang 2011]{Zhang:11}
+Chao-yang, Z. (2011).
+\newblock Dos attack analysis and study of new measures to prevent.
+\newblock In {\em Intelligence Science and Information Engineering (ISIE), 2011
+  International Conference on}, pages 426 --429.
+
+\bibitem[Heroku ]{heroku}
 Heroku.
 \newblock http://www.heroku.com/.
 
-\bibitem{amazon}
-Amazon~Web Services.
+\bibitem[Hosting ]{linode}
+Hosting, L. X.~V.
+\newblock http://www.linode.com/.
+
+\bibitem[Khor and Nakao 2009]{Soon:10}
+Khor, S.~H. and Nakao, A. (2009).
+\newblock spow: On-demand cloud-based eddos mitigation mechanism.
+\newblock {\em HotDep (Fifth Workshop on Hot Topics in System Dependability)}.
+
+\bibitem[News 2010]{ddosatks}
+News, B. (2010).
+\newblock http://www.bbc.co.uk/news/technology-11971259.
+
+\bibitem[Services ]{amazon}
+Services, A.~W.
 \newblock http://aws.amazon.com/.
 
-\bibitem{linode}
-Linode XEN~VPS Hosting.
-\newblock http://www.linode.com/.
+\bibitem[Zhang et~al. 2010]{Zhang:10}
+Zhang, Q., Cheng, L., and Boutaba, R. (2010).
+\newblock Cloud computing: state-of-the-art and research challenges.
+\newblock {\em Journal of Internet Services and Applications}, 1:7--18.
+
+\bibitem[Zuckerman et~al. 2010]{Zuckerman:10}
+Zuckerman, E., Roberts, H., McGrady, R., York, J., and Jr., J. G.~P. (2010).
+\newblock {2010 Report on Distributed Denial of Service (DDos) Attacks}.
+\newblock {\em Berkman Center Research Publication No. 2010-16}.
 
 \end{thebibliography}
