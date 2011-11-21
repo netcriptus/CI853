@@ -190,14 +190,11 @@ Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo 
 
 
 
-O sub módulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este sub módulo realiza medição para verificar a existência de um possível ataque de DDoS, se detectado o sub módulo INA é ativado. O INA criará uma nova instância da aplicação em outra instância (ta certo este termo???) de servidor na \emph{cloud}, consequentemente com um endereço IP diferente.
-Com isso, o sub módulo RT passará a tratar todo o tráfego de entrada informando ao sub módulo GB, o endereço IP de cada requisição de cliente direcionada ao servidor e encaminhará, a este cliente, uma requisição http (sigla) informando o endereço do novo servidor. 
+O sub módulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este sub módulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o sub módulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente. Com isso, o sub módulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionado à nova aplicação.
 
-Tal procedimento é adotado baseando-se no princípio de que o atacante não afetará a nova instância da aplicação, pois ele não interpretará as respostas que informam o IP da nova instância e continuará enviando solicitações em direção ao endereço antigo da aplicação.
+Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabem ao GB este papel de adicionar endereços e gerenciar sua saída e o tempo de validade que aumenta exponencialmente.
 
- 
-Por sua vez, o GB nao sei como contar o que ele faz, kkkkkk????? 
- 
+%Tal procedimento é adotado baseando-se no princípio de que o atacante não afetará a nova instância da aplicação, pois ele não interpretará as respostas que informam o IP da nova instância e continuará enviando solicitações em direção ao endereço antigo da aplicação.
 
 
 
