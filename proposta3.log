@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  21 NOV 2011 11:31
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  21 NOV 2011 11:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -487,11 +487,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <13> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 50.
 
-Overfull \hbox (0.49918pt too wide) in paragraph at lines 73--74
-\OT1/ptm/m/n/12 aplica[][]oes dis-po-ni-bi-li-za-das em localiza[][]oes f[]^^Ps
-icas dis-tin-tas e des-co-nhe-ci-das. Uma grande
- []
-
 
 LaTeX Warning: Citation `Sachdeva08ddosincidents' on page 1 undefined on input 
 line 82.
@@ -507,40 +502,40 @@ put line 82.
 LaTeX Warning: Citation `Soon:10' on page 2 undefined on input line 88.
 
 
-LaTeX Warning: Citation `Bakshi:10' on page 2 undefined on input line 91.
+LaTeX Warning: Citation `Bakshi:10' on page 2 undefined on input line 93.
 
 
 LaTeX Warning: Citation `Liu:2010:NFD:1866835.1866849' on page 2 undefined on i
-nput line 91.
+nput line 93.
 
 
-LaTeX Warning: Citation `infoexame' on page 2 undefined on input line 92.
+LaTeX Warning: Citation `infoexame' on page 2 undefined on input line 95.
 
 
-LaTeX Warning: Citation `tdl4' on page 2 undefined on input line 92.
+LaTeX Warning: Citation `tdl4' on page 2 undefined on input line 95.
 
 
-LaTeX Warning: Citation `1039856' on page 2 undefined on input line 117.
+LaTeX Warning: Citation `1039856' on page 2 undefined on input line 121.
 
 
 LaTeX Warning: Citation `Hazelhurst:2008:SCU:1456659.1456671' on page 2 undefin
-ed on input line 119.
+ed on input line 123.
 
 [2]
 
 LaTeX Warning: Citation `Verkaik:2006:PCD:1162666.1162673' on page 3 undefined 
-on input line 126.
+on input line 130.
 
 
-LaTeX Warning: Citation `Bakshi:10' on page 3 undefined on input line 129.
+LaTeX Warning: Citation `Bakshi:10' on page 3 undefined on input line 133.
 
 
 LaTeX Warning: Citation `Walfish:2010:DDO:1731060.1731063' on page 3 undefined 
-on input line 137.
+on input line 141.
 
 
 LaTeX Warning: Citation `Dwork:1992:PVP:646757.705669' on page 3 undefined on i
-nput line 137.
+nput line 141.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -548,36 +543,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [3]
 
 LaTeX Warning: Citation `Stavrou:2005:WOS:1090583.1648614' on page 4 undefined 
-on input line 140.
+on input line 144.
 
 
 LaTeX Warning: Citation `Keromytis:2002:SSO:964725.633032' on page 4 undefined 
-on input line 140.
+on input line 144.
 
 
 LaTeX Warning: Citation `Dietrich00analyzingdistributed' on page 4 undefined on
- input line 140.
+ input line 144.
 
 
 LaTeX Warning: Citation `Dhage:2011:IDS:1980022.1980076' on page 4 undefined on
- input line 149.
+ input line 153.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 151.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 151.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
  [4]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 169.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 173.
 
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 169.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 173.
 
 No file proposta3.bbl.
 [5] (./proposta3.aux)
@@ -594,4 +589,4 @@ Here is how much of TeX's memory you used:
  717 hyphenation exceptions out of 8191
  43i,8n,40p,1529b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on proposta3.dvi (5 pages, 25608 bytes).
+Output written on proposta3.dvi (5 pages, 25620 bytes).
