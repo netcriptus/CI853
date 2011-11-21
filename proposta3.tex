@@ -156,32 +156,23 @@ WebSoS \cite{Stavrou:2005:WOS:1090583.1648614} é uma adaptação de \emph{Secur
 \section{Arquitetura para Mitigação de DDoS em \emph{Cloud}}
 
 
-Uma arquitetura em \emph{cloud} envolve comunicação de inúmeros componentes com APIs (\emph{Application Programing Interface}), geralmente de serviços web. Os usuários desta arquitetura não sabem e não precisam saber sobre a localização de seus dados ou aplicações que desejem utilizar, porém precisam aceitar e dependem  dos níveis de segurança vigentes que é o tópico mais preocupante para administradores.
-A segurança em \emph{cloud} compreende dois tipos, segundo \cite{Dhage:2011:IDS:1980022.1980076}:  
-\begin{itemize}
-\item segurança de dados;
-\item segurança da rede.
-\end{itemize}
+Uma arquitetura em \emph{cloud} envolve comunicação de inúmeros componentes com APIs (\emph{Application Programing Interface}), geralmente de serviços web. Os usuários desta arquitetura não sabem e não precisam saber sobre a localização de seus dados ou aplicações que desejem utilizar, porém precisam aceitar e dependem  dos níveis de segurança vigentes, que são tópicos preocupantes para administradores.
+A segurança em \emph{cloud} compreende as áreas de segurança de dados e da rede, segundo \cite{Dhage:2011:IDS:1980022.1980076}:  
+% \begin{itemize}
+% \item segurança de dados;
+% \item segurança da rede.
+% \end{itemize}
 
-Um ataque em dados afeta um simples usuário enquanto um ataque na rede pode compremeter diversos usuários. Um ataque de DDos em \emph{cloud} compreende um ataque a segurança em rede, portanto é de suma importância. 
-Um dos mais importantes fatores para detectar ataques de DDoS é encontrar a correlação entre diferentes fluxos paras um mesmo destino.
+Enquanto um ataque em dados afeta um número restrito de usuários, um ataque na rede pode comprometer diversos usuários. Um ataque de DDos em uma \emph{cloud} compreende um ataque a segurança em rede, portanto é de suma importância. 
+Um dos mais importantes fatores para detectar ataques de DDoS é encontrar a correlação entre diferentes fluxos para um mesmo destino.
 
-Com a possibilidade de novas infraestruturas de recursos como as possiveis pelas \emph{clouds}, cria-se a possibilidade de quando um serviço estiver sendo atacado por DDoS, esta aplicação possa ser movida fisicamente para outro endereço, possibilitando que se tenha uma tolerância a falhas e uma conservação de recursos dispendidos, pois este novo endereçamento só será conhecido por solicitantes legítimos.
+Com a nova infraestrutura de recursos criada pelas \emph{clouds}, existe a possibilidade de se mover fisicamente uma aplicação para outro endereço quando ela é atacada por DDoS. Assim, possibilita-se a tolerância à falhas e a conservação de recursos despendidos, pois este novo endereço só será conhecido por solicitantes legítimos.
 
-Este trabalho propõe uma arquitetura pró-ativa para mitigar este tipo de ataque em \emph{cloud} de forma autônoma e independente. Ele se diferencia de outras propostas pela independência de qualquer aplicação ou protocolo, por prover acurácia na diferenciação entre o tráfego legítimo e o atacante, por não onerar financeiramente o uso dos recursos, e por minimizar os problemas causados pelo ataque sem intervenção humana.
+Este trabalho propõe uma arquitetura híbrida para mitigar este tipo de ataque em \emph{cloud} de forma autônoma e independente. Ele se diferencia de outras propostas pela independência de qualquer aplicação ou protocolo, por prover acurácia na diferenciação entre o tráfego legítimo e o atacante, por não onerar financeiramente o uso dos recursos, e por minimizar os problemas causados pelo ataque sem intervenção humana.
 
-A arquitetura proposta poderá ser utilizada por qualquer aplicação hospedada em uma \emph{cloud}, que ao sofrer indícios de um ataque por DDoS filtra o tráfego ligítimo e encaminha apenas este tr para uma nova instância da mesma aplicação. 
+A arquitetura proposta poderá ser utilizada por qualquer aplicação hospedada em uma \emph{cloud} que, ao sofrer indícios de um ataque DDoS, filtra o tráfego legítimo e encaminha apenas este para uma nova instância da mesma aplicação. 
 
-Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo global chamado de Gerenciador de Tráfego (GF)que não se comunica com a aplicação. Ele filtra o tráfego e envia solicitação de  nova requisição ao cliente para a nova instância da aplicação.(explicar e explicar a filtragem........?????????????? 
-
-\begin{figure}[h!]
-\centering
-%\includegraphics[width=0.85\textwidth]{arquitetura.eps}
-\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
-\label{fig:arq}
-\end{figure}
-
-As operações realizadas pelo módulo GF são divididas em quatro sub-módulos:
+Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo geral chamado de Gerenciador de Tráfego (GF), que não se comunica diretamente com a aplicação. As operações realizadas pelo módulo GF são divididas em quatro sub-módulos:
 
 \begin{enumerate}[i]
   \item Analizador de Tráfego (AT);
@@ -189,6 +180,15 @@ As operações realizadas pelo módulo GF são divididas em quatro sub-módulos:
   \item Gerenciador de \emph{Blacklist}(GB);
   \item Instanciador de Nova Aplicação(INA).
 \end{enumerate}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.55\textwidth]{arq.eps}
+\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
+\label{fig:arq}
+\end{figure}
+
+
 
 O sub módulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este sub módulo realiza medição para verificar a existência de um possível ataque de DDoS, se detectado o sub módulo INA é ativado. O INA criará uma nova instância da aplicação em outra instância (ta certo este termo???) de servidor na \emph{cloud}, consequentemente com um endereço IP diferente.
 Com isso, o sub módulo RT passará a tratar todo o tráfego de entrada informando ao sub módulo GB, o endereço IP de cada requisição de cliente direcionada ao servidor e encaminhará, a este cliente, uma requisição http (sigla) informando o endereço do novo servidor. 
