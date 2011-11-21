@@ -141,14 +141,11 @@ Obviamente, a eficácia de todos os esquemas depende criticamente da capacidade 
 
 %Filtro de Bloom
 
-\cite{Walfish:2010:DDO:1731060.1731063} apresenta uma forma de mitigação por ataque classificada como defesa baseada em recursos \cite{Dwork:1992:PVP:646757.705669}. A mitigação emprega o procedimento de que toda vez que um determinado limite de banda seja consumido com requisições para um servidor, este servidor, antes que seus recursos se esgotem, encoraja seus clientes a enviar altos volumes de tráfego. Dado que os atacantes já estariam usando sua capacidade máxima, eles não poderiam reagir ao encorajamento. A proposta se baseia na premissa que bons clientes tem condições de aumentar seu uso de banda e reagir de forma drástica ao encorajamento. O resultado pretendido é que os bons clientes dominem os maus clientes ao capturar uma fração maior de recursos do servidor. Um tanto curiosa, esta proposta ocasiona problemas como %a reação apenas quando o servidor já está sendo atacado e o procedimento 
+\cite{Walfish:2010:DDO:1731060.1731063} apresenta uma forma de mitigação por ataque classificada como defesa baseada em recursos \cite{Dwork:1992:PVP:646757.705669}. A mitigação emprega o procedimento de que toda vez que um determinado limite de banda seja consumido com requisições para um servidor, este servidor, antes que seus recursos se esgotem, encoraja seus clientes a enviar altos volumes de tráfego. Dado que os atacantes já estariam usando sua capacidade máxima, eles não poderiam reagir ao encorajamento. A proposta se baseia na premissa que bons clientes tem condições de aumentar seu uso de banda e reagir de forma drástica ao encorajamento. O resultado pretendido é que os bons clientes dominem os maus clientes ao capturar uma fração maior de recursos do servidor. O cliente só será atendido caso ele tenha banda o suficiente para se sobressair mediante o tráfego dos atacantes. Um tanto curiosa, esta proposta ocasiona problemas como %a reação apenas quando o servidor já está sendo atacado e o procedimento 
 o encorajamento a recebimento de ainda mais tráfego em cenários de ataque - 
 % do que o próprio ataque poderia produzir, ou muitas vezes maior, 
-dificilmente um serviço conseguirá atender a tantas requisições.
-%
-% NÃO ENTENDI O TREXO ABAIXO
-%
-% e quantas requisições inúteis estes clientes deveriam reportar ao servidor, o cliente so seria atendido mediante inúmeras requisições que enviasse ao servidor e não se pode garantir que um atacante não possa, dentro de um determinado periodo de tempo pré-estabelecido, encaminhar diversas requisições todas com o mesmo endereço de origem.
+dificilmente um serviço conseguirá atender a tantas requisições. 
+
 
 
 WebSoS \cite{Stavrou:2005:WOS:1090583.1648614} é uma adaptação de \emph{Secure Overlay Services} (SOS) \cite{Keromytis:2002:SSO:964725.633032} que mitiga DDoS em servidores web protegendo-os imediatamente após a detecção do ataque. Com filtragem robusta de tráfego e bloqueio de requisições não aprovadas, forma-se um \emph{overlay} seguro. O servidor utiliza mecanismos de autenticação criptográfica ou um teste gráfico de Turing \cite{Dietrich00analyzingdistributed} para diferenciar clientes humanos de \emph{scripts} de ataque. Estes procedimentos, segundo os testes dos autores, não sobrecarregam o funcionamento do serviço, porém exigem que os roteadores localizados no perímetro do servidor sejam configurados para controlar o tráfego, procedimento inviável para arquiteturas de \emph{cloud}.

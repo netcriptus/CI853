@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  21 NOV 2011 11:46
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  21 NOV 2011 12:14
 entering extended mode
- \write18 enabled.
- file:line:error style messages enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**proposta3.tex
+**proposta3
 (./proposta3.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
@@ -486,107 +485,48 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <13> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 50.
+ [1
 
-
-LaTeX Warning: Citation `Sachdeva08ddosincidents' on page 1 undefined on input 
-line 82.
-
-
-LaTeX Warning: Citation `Li:2009:DDA:1683304.1684620' on page 1 undefined on in
-put line 82.
-
-[1
-
-]
-
-LaTeX Warning: Citation `Soon:10' on page 2 undefined on input line 88.
-
-
-LaTeX Warning: Citation `Bakshi:10' on page 2 undefined on input line 93.
-
-
-LaTeX Warning: Citation `Liu:2010:NFD:1866835.1866849' on page 2 undefined on i
-nput line 93.
-
-
-LaTeX Warning: Citation `infoexame' on page 2 undefined on input line 95.
-
-
-LaTeX Warning: Citation `tdl4' on page 2 undefined on input line 95.
-
-
-LaTeX Warning: Citation `1039856' on page 2 undefined on input line 121.
-
-
-LaTeX Warning: Citation `Hazelhurst:2008:SCU:1456659.1456671' on page 2 undefin
-ed on input line 123.
-
-[2]
-
-LaTeX Warning: Citation `Verkaik:2006:PCD:1162666.1162673' on page 3 undefined 
-on input line 130.
-
-
-LaTeX Warning: Citation `Bakshi:10' on page 3 undefined on input line 133.
-
-
-LaTeX Warning: Citation `Walfish:2010:DDO:1731060.1731063' on page 3 undefined 
-on input line 141.
-
-
-LaTeX Warning: Citation `Dwork:1992:PVP:646757.705669' on page 3 undefined on i
-nput line 141.
-
-
+] [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-
-LaTeX Warning: Citation `Stavrou:2005:WOS:1090583.1648614' on page 4 undefined 
-on input line 144.
-
-
-LaTeX Warning: Citation `Keromytis:2002:SSO:964725.633032' on page 4 undefined 
-on input line 144.
+Overfull \hbox (10.8088pt too wide) in paragraph at lines 154--155
+\OT1/ptm/m/n/12 mente ap[]os a detec[][]ao do ata-que. Com fil-tra-gem ro-busta
+ de tr[]afego e blo-queio de requisi[][]oes
+ []
 
 
-LaTeX Warning: Citation `Dietrich00analyzingdistributed' on page 4 undefined on
- input line 144.
+Overfull \hbox (5.40782pt too wide) in paragraph at lines 154--155
+\OT1/ptm/m/n/12 n[]ao apro-va-das, forma-se um \OT1/ptm/m/it/12 over-lay \OT1/p
+tm/m/n/12 se-guro. O ser-vi-dor uti-liza me-ca-nis-mos de autentica[][]ao
+ []
 
-
-LaTeX Warning: Citation `Dhage:2011:IDS:1980022.1980076' on page 4 undefined on
- input line 153.
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 165.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
  [4]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 173.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 183.
 
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 173.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 183.
 
-No file proposta3.bbl.
-[5] (./proposta3.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./proposta3.bbl [5]) [6] (./proposta3.aux) ) 
 Here is how much of TeX's memory you used:
- 3002 strings out of 493748
- 42415 string characters out of 3143569
- 109850 words of memory out of 3000000
- 6250 multiletter control sequences out of 15000+200000
+ 3005 strings out of 493748
+ 42461 string characters out of 3143569
+ 110114 words of memory out of 3000000
+ 6251 multiletter control sequences out of 15000+200000
  13006 words of font info for 36 fonts, out of 3000000 for 9000
  717 hyphenation exceptions out of 8191
- 43i,8n,40p,1529b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,8n,40p,977b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on proposta3.dvi (5 pages, 25620 bytes).
+Output written on proposta3.dvi (6 pages, 29952 bytes).

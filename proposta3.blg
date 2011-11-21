@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: proposta3.aux
+The style file: sbc.bst
+Database file #1: proposta3.bib
+You've used 16 entries,
+            1935 wiz_defined-function locations,
+            583 strings with 7350 characters,
+and the built_in function-call counts, 7290 in all, are:
+= -- 752
+> -- 278
+< -- 16
++ -- 96
+- -- 94
+* -- 566
+:= -- 1200
+add.period$ -- 51
+call.type$ -- 16
+change.case$ -- 127
+chr.to.int$ -- 16
+cite$ -- 16
+duplicate$ -- 309
+empty$ -- 511
+format.name$ -- 116
+if$ -- 1508
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 13
+newline$ -- 80
+num.names$ -- 48
+pop$ -- 116
+preamble$ -- 1
+purify$ -- 127
+quote$ -- 0
+skip$ -- 248
+stack$ -- 0
+substring$ -- 521
+swap$ -- 79
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 0
+while$ -- 62
+width$ -- 0
+write$ -- 218
