@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.5.23)  22 NOV 2011 15:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.5.23)  22 NOV 2011 13:21
 entering extended mode
  %&-line parsing enabled.
-**proposta3.tex
-(./proposta3.tex
+**proposta.tex
+(./proposta.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -93,18 +93,6 @@ Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \titlewidthlast=\dimen118
 \titlewidthfirst=\dimen119
 ))
-(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/etc/texmf/tex/latex/config/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count91
-))
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -118,7 +106,11 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
-)
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count91
+))
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
 )
@@ -403,8 +395,8 @@ Package: stfloats 1999/10/22
 (/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks21
-) (./proposta3.aux)
-\openout1 = `proposta3.aux'.
+) (./proposta.aux)
+\openout1 = `proposta.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -480,83 +472,107 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks23
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 40.
+(Font)              <12> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 40.
+(Font)              <8> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 40.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 40.
+(Font)              <6> on input line 39.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 39.
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 40.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 39.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 51.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-Overfull \hbox (10.8088pt too wide) in paragraph at lines 149--150
-\OT1/ptm/m/n/12 mente ap[]os a detec[][]ao do ataque. Com fil-tragem ro-busta d
-e tr[]afego e blo-queio de requisi[][]oes
+Overfull \hbox (1.46324pt too wide) in paragraph at lines 63--75
+[]\OT1/ptm/m/n/12 Diversas di-fi-cul-dades s[]ao en-con-tradas ao se ten-tar mi
+t-i-gar os efeitos destes ataques.
  []
 
 
-Overfull \hbox (5.40782pt too wide) in paragraph at lines 149--150
-\OT1/ptm/m/n/12 n[]ao aprovadas, forma-se um \OT1/ptm/m/it/12 over-lay \OT1/ptm
-/m/n/12 se-guro. O servi-dor uti-liza mecan-is-mos de autentica[][]ao
+Overfull \hbox (4.52367pt too wide) in paragraph at lines 76--86
+[]\OT1/ptm/m/n/12 O tra-balho [[]] prop[]oe tratar este cen[]ario de ataques at
+rav[]es
  []
 
-[4]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 181.
+[1
 
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1phv.fd
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (4.67613pt too wide) in paragraph at lines 134--142
+\OT1/ptm/m/n/12 gerar[]a uma ar-quite-tura para mitiga[][]ao de ataques de DDoS
+ ex-e-cu-ta-dos so-bre uma aplica[][]ao
+ []
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.161 ...cs[width=0.85\textwidth]{arquitetura.eps}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 162.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 181.
- [5]
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 162.
+ [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 213.
+(Font)              <7> on input line 218.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 213.
+(Font)              <5> on input line 218.
+
+Overfull \hbox (12.98364pt too wide) in paragraph at lines 218--219
+[]\OT1/ptm/m/n/12 Como m[]etricas, pode-mos uti-lizar o \OT1/ptm/b/n/12 tempo d
+e re-sposta do servi-dor para requisi[][]oes
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 225.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 225.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 230.
- (./proposta3.bbl
-[6]) [7] (./proposta3.aux) ) 
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 265.
+ (./proposta.bbl [3])
+[4] (./proposta.aux) ) 
 Here is how much of TeX's memory you used:
- 3320 strings out of 495061
- 45754 string characters out of 1182621
- 112443 words of memory out of 3000000
- 6430 multiletter control sequences out of 15000+50000
- 26907 words of font info for 51 fonts, out of 3000000 for 9000
+ 3282 strings out of 495061
+ 45006 string characters out of 1182621
+ 114436 words of memory out of 3000000
+ 6393 multiletter control sequences out of 15000+50000
+ 25278 words of font info for 49 fonts, out of 3000000 for 9000
  31 hyphenation exceptions out of 8191
- 43i,12n,40p,1098b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.e
-nc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-tex
-live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
-rw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.p
-fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texm
-f-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type
-1/urw/times/utmri8a.pfb>
-Output written on proposta3.pdf (7 pages, 124108 bytes).
+ 43i,11n,40p,492b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/f
+onts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/hel
+vetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></u
+sr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texli
+ve/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proposta.pdf (4 pages, 99489 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
