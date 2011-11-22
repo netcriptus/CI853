@@ -7,3 +7,5 @@ logs/*
 *.aux
 *.log
 *.gz
+*.dvi
+
