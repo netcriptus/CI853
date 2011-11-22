@@ -1,12 +1,14 @@
 %!TEX root = ./proposta3.tex
 
-A etapa de avaliação da proposta consistirá principalmente na análise
-da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for devidamente
-mitigado, as requisições de atacantes serão ignoradas, após eles serem introduzidos na \emph{blacklist}
+A avaliação de um sistema de defesa para ataques pode ser avaliado sobre os aspectos de sua construção. Uma solução para mitigar ataques pode ser medido quanto a sua capacidade de detectar o tipo do ataque, assim como, a de reagir a eles. Outra abordagem que avalia uma solução é quanto a sua capacidade em manter as condições normais de funcionamento do cenário de ataque, mesmo sob ataque. Segundo \cite{4600003} é importante estimar um sistema de defesa sobre diversos aspectos como: custo de desenvolvimento, desempenho, degradação do serviço e custo de robustez. 
+
+A maioria das métricas para calcular o impacto de ataques DDoS estão efetivamente relacionadas com as medidas de eficiência dos padrões de defensa \cite{4809152}. Atualmente, são consideradas estratégias de mediç~ao da quantidade de tráfego legítimo passando pela canal com e sem ataque. Outros trabalhos tem se concentrado na medida do tempo de resposta para avaliar a eficiencia de uma solução. cite{Mirkovic:2007:TUM:1281700.1281708} utiliza como métrica para aferir o impacto de DDoS, um modelo baseado em \emph{threshold}. Quando uma medida excede este \emph{threshold}, ocorre a  indicação da baixa qualidade do serviço, esta medida é indicada para aplicações fim-a-fim como http.
+
+
+A etapa de avaliação desta proposta consistirá principalmente na análise
+da capacidade do servidor em atender novas requisições. Se o ataque de DDoS for devidamente
+mitigado, as requisições de atacantes serão ignoradas, após a inclusão do requisitante na \emph{blacklist}
 e, assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
-para o novo servidor e garantirá acesso direto à ela.
-
-Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao servidor. Como exemplos, o comando 
-\emph{curl} pode ser utilizado em linha de comando para gerar uma requisição HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que permite a especificação do número de requisições que devem ser realizadas, a concorrência destas requisições, o tempo máximo que se deve esperar por respostas, e diversos outros parâmetros.
-
-Como métricas, poderão ser utilizados o \textbf{tempo de resposta do servidor para requisições atendidas}, a \textbf{taxa de requisições atendidas com relação ao número de clientes}, a \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
+para a nova instância e garantirá que eles terão acesso direto nas próximas requisições. %ISTO CABE A PARTE DE ARQUITETURA.....Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao servidor. Como exemplos, o comando 
+%\emph{curl} pode ser utilizado em linha de comando para gerar uma requisição HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que permite a especificação do número de requisições que devem ser realizadas, a concorrência destas requisições, o tempo máximo que se deve esperar por respostas, e diversos outros parâmetros.
+Portanto, deacordo com as métricas especificadas por \cite{4600003}, este trabalho de pesquisa fará uso de métricas como o tempo de resposta do servidor para requisições atendidas, a taxa de requisições atendidas com relação ao número de clientes, a carga gerada pelos módulos da arquitetura de acordo com o número de clientes \footnote{o termo ``clientes'', usado neste parágrafo engloba tanto clientes legítimos quanto atacantes.}. Cabe ressaltar que, este trabalho é desenvolvido no sentido de que, sempre que um grande tráfego de pacotes seja destinado à aplicação, a arquitetura de defesa, mediante avaliação de comprometimento de recursos disponíveis na mesma, trabalhará para criar uma nova instância, independente de se ter uma acurácia  na caracterização de ataque de DDoS. Portanto, a avaliação quanto a geração de falsos positivos não se fará necessária.
