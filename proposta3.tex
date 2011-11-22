@@ -41,7 +41,7 @@ Nadine Lipa Pari\inst{1}
 
 % {
 % \begin{center}
-% {\LARGE \textbf{Arquitetura para Mitiga\c{c}\~{a}o de Ataques DDoS}}
+% {\LARGE \textbf{Arquitetura para Mitigação de Ataques DDoS}}
 % \vskip 0.5cm
 % {\Large Cinara Menegazzo, Fernando Cezar Bernardelli, \\ Fernando Henrique Gielow, Nadine
 % Lipa Pari}
@@ -129,8 +129,7 @@ Neste \emph{framework}, todo pacote, malicioso ou não, precisa ser verificado p
 
 \cite{Verkaik:2006:PCD:1162666.1162673} apresentam outra proposta pró-ativa, que emprega Comunidades de Interesse (COIs) para capturar comportamento coletivo das entidades remotas e as usa para predizer o comportamento futuro. Tal proposta se baseia no fato de que clientes que tiveram relacionamentos legítimos anteriormente possuem bons indícios e podem ser consideradas legítimos. Estas afirmações são geradas da observação de comunicações normais da rede e são utilizadas em conjunto com políticas específicas do cliente para mitigar pró-ativamente os ataques de DDoS usando mecanismos existentes nos roteadores. 
 %
-Entretanto, a identificação dos clientes passados não é tão trivial. Além do pequeno \emph{overhead} gerado pela verificação, endereços IPs são normalmente dinâmicos e a exigência da realização de \emph{login} para a identificação não é possível, dado que o ataque DDoS pode a impossibilitar.
-%ALGUEM CONSEGUE VER UM DEFEITO PARA BATER??? 
+Entretanto, a identificação dos clientes passados não é tão trivial. Além do pequeno \emph{overhead} gerado pela verificação, endereços IPs são normalmente dinâmicos e a exigência da realização de \emph{login} para a identificação não é possível, dado que o ataque de DDoS pode a impossibilitar.
 
 
 O trabalho de \cite{Bakshi:10} propõe tratar ataques através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, a proposta busca detectar os atacantes através de PINGs - caso um cliente suspeito de ser atacante não responda ao PING, ele é considerado como um atacante, de fato. Desta maneira, apenas os clientes que responderem ao PING serão 
@@ -158,10 +157,6 @@ WebSoS \cite{Stavrou:2005:WOS:1090583.1648614} é uma adaptação de \emph{Secur
 
 Uma arquitetura em \emph{cloud} envolve comunicação de inúmeros componentes com APIs (\emph{Application Programing Interface}), geralmente de serviços web. Os usuários desta arquitetura não sabem e não precisam saber sobre a localização de seus dados ou aplicações que desejem utilizar, porém precisam aceitar e dependem  dos níveis de segurança vigentes, que são tópicos preocupantes para administradores.
 A segurança em \emph{cloud} compreende as áreas de segurança de dados e da rede, segundo \cite{Dhage:2011:IDS:1980022.1980076}:  
-% \begin{itemize}
-% \item segurança de dados;
-% \item segurança da rede.
-% \end{itemize}
 
 Enquanto um ataque em dados afeta um número restrito de usuários, um ataque na rede pode comprometer diversos usuários. Um ataque de DDos em uma \emph{cloud} compreende um ataque a segurança em rede, portanto é de suma importância. 
 Um dos mais importantes fatores para detectar ataques de DDoS é encontrar a correlação entre diferentes fluxos para um mesmo destino.
@@ -192,16 +187,10 @@ includegraphics[width=0.55\textwidth]{arq.eps}
 
 O sub módulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este sub módulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o sub módulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente. Com isso, o sub módulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionados à nova aplicação.
 
-Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB o papel de adicionar endereços de clientes à\emph{blacklist} e gerenciar sua saída dela, assim como o tempo de validade da entrada, que aumenta exponencialmente.
+Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
 
-Contudo, para previnir que este controle impeça o acesso de clientes legítimos, o cliente ao ser direcionado para a nova instância, ter´a este endereço armazenado na forma de \emph{cookies}.
-Assim, apenas o cliente leg´itimo ter´a conhecimento do novo endereço da aplicaç~ao, dado que atacantes de DDoS n~ao ir~ao manter \emph{cookie}.
+Contudo, para previnir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookies} em sua máquina. Este procediemnto garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicaço, dado que atacantes de DDoS não irão manter \emph{cookies}.
  
-%Tal procedimento é adotado baseando-se no princípio de que o atacante não afetará a nova instância da aplicação, pois ele não interpretará as respostas que informam o IP da nova instância e continuará enviando solicitações em direção ao endereço antigo da aplicação.
-
-
-
-
 Focamos na estimativa de quantidade de tráfego para direcionar o tráfego pelo módulo 
 
 
@@ -211,6 +200,54 @@ Blacklist com TTL para reenvio de novo endereco da aplicacao, para onde ela foi 
 Arquitetura......
 
 
+
+\section{Descrição da Avaliação}
+A etapa de avaliação da proposta consistirá principalmente na análise
+da capacidade do servidor de atender novas requisições. Se o ataque de DDoS for devidamente
+mitigado, as requisições de atacantes serão ignoradas, após eles serem introduzidos na \emph{blacklist}
+e, assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
+para o novo servidor e garantirá acesso direto à ela.
+
+Com isso, para a análise, serão utilizadas ferramentas que geram requisições ao servidor. Como exemplos, o comando 
+\emph{curl} pode ser utilizado em linha de comando para gerar uma requisição HTTP, sendo necessária a criação de \emph{scripts} mais robustos para incorporar diversas requisições. Outra alternativa é o uso do comando \emph{ab}, que permite a especificação do número de requisições que devem ser realizadas, a concorrência destas requisições, o tempo máximo que se deve esperar por respostas, e diversos outros parâmetros.
+
+Como métricas, poderão ser utilizados o \textbf{tempo de resposta do servidor para requisições atendidas}, a \textbf{taxa de requisições atendidas com relação ao número de clientes}, a \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
+
+\section{Conclusão}
+Este trabalho apresentou uma proposta de arquitetura de mitigação para ataques de DDoS direcionados à aplicações hospedadas em \emph{cloud}. A arquitetura apresentará características de independência da 
+
+\section{Cronograma}
+
+{\footnotesize
+\center
+\begin{table}[ht!]
+\footnotesize
+\center
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline
+
+      & \textbf{Nov/1} & \textbf{Nov/2} & \textbf{Nov/3} & \textbf{Nov/4} & \textbf{Dez/1} & \textbf{Dez/2} & \textbf{Dez/3} \\
+\hline
+\hline
+Elaboração da proposta de solução      & $\bullet$ & $\bullet$ &  &  &  &  &  \\
+\hline
+Estudo de métricas de desempenho      &  & $\bullet$ &  &  &  & &  \\
+\hline
+Pesquisa sobre detecção de DDoS      &  & $\bullet$ &  &  &  &  &  \\
+\hline
+Pesquisa sobre ferramentas       &  &  & $\bullet$ &  &  &  &  \\
+para geração de requisições       &   &   &   &   &   &   &   \\
+\hline
+Implementação dos módulos      &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ &  \\
+\hline
+Escrita do relatório final      &  &   &  & $\bullet$  & $\bullet$ &  $\bullet$ & $\bullet$ \\
+\hline
+Experimentação      &  &  &  &  &  & $\bullet$ & $\bullet$ \\
+\hline
+\end{tabular}
+\label{tab:crono}
+\end{table}
+}
 
 
 % \newpage
