@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  21 NOV 2011 14:55
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  22 NOV 2011 15:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -108,6 +108,20 @@ Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \titlewidthlast=\dimen122
 \titlewidthfirst=\dimen123
 ))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
 (/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -121,10 +135,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
-
-(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
+)
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
 )
@@ -462,70 +473,78 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 39.
+(Font)              <12> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 39.
+(Font)              <8> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 39.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 39.
+(Font)              <6> on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 40.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 39.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 40.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 50.
- [1
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 51.
 
-] [2]
+Overfull \hbox (3.78833pt too wide) in paragraph at lines 52--53
+\OT1/ptm/m/n/12 Por[]em, tratando-se de aplica[][]oes des-ti-na-das ao com[]erc
+io eletr[]onico, uma pa-rada do servi[]o
+ []
+
+[1
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-Overfull \hbox (10.8088pt too wide) in paragraph at lines 151--152
+ [2]
+[3]
+Overfull \hbox (10.8088pt too wide) in paragraph at lines 150--151
 \OT1/ptm/m/n/12 mente ap[]os a detec[][]ao do ata-que. Com fil-tra-gem ro-busta
  de tr[]afego e blo-queio de requisi[][]oes
  []
 
 
-Overfull \hbox (5.40782pt too wide) in paragraph at lines 151--152
+Overfull \hbox (5.40782pt too wide) in paragraph at lines 150--151
 \OT1/ptm/m/n/12 n[]ao apro-va-das, forma-se um \OT1/ptm/m/it/12 over-lay \OT1/p
 tm/m/n/12 se-guro. O ser-vi-dor uti-liza me-ca-nis-mos de autentica[][]ao
  []
 
 [4]
-File: arq.eps Graphic file (type eps)
- <arq.eps>
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 187.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 182.
 
  (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 187.
-
-(./proposta3.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 182.
  [5]
-[6]) [7] (./proposta3.aux) ) 
-Here is how much of TeX's memory you used:
- 2993 strings out of 493748
- 42209 string characters out of 3143569
- 110114 words of memory out of 3000000
- 6240 multiletter control sequences out of 15000+200000
- 13006 words of font info for 36 fonts, out of 3000000 for 9000
- 717 hyphenation exceptions out of 8191
- 43i,8n,40p,1098b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 214.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 214.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 231.
 
-Output written on proposta3.dvi (7 pages, 29756 bytes).
+(./proposta3.bbl [6] [7]) [8] (./proposta3.aux) ) 
+Here is how much of TeX's memory you used:
+ 3180 strings out of 493748
+ 45350 string characters out of 3143569
+ 115004 words of memory out of 3000000
+ 6422 multiletter control sequences out of 15000+200000
+ 14539 words of font info for 39 fonts, out of 3000000 for 9000
+ 717 hyphenation exceptions out of 8191
+ 43i,12n,40p,1168b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on proposta3.dvi (8 pages, 41624 bytes).
