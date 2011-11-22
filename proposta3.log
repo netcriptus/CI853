@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  22 NOV 2011 15:58
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  22 NOV 2011 16:07
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -416,7 +416,7 @@ Package: stfloats 1999/10/22
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks21
 )
-(./proposta3.aux)
+No file proposta3.aux.
 \openout1 = `proposta3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -432,7 +432,6 @@ LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 21.
-
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -493,58 +492,122 @@ File: omspcr.fd
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 43.
+ (./resumo.tex)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
 
-Overfull \hbox (3.78833pt too wide) in paragraph at lines 52--53
-\OT1/ptm/m/n/12 Por[]em, tratando-se de aplica[][]oes des-ti-na-das ao com[]erc
-io eletr[]onico, uma pa-rada do servi[]o
- []
-
-[1
+(./intro.tex [1
 
 ]
+
+LaTeX Warning: Citation `Sachdeva08ddosincidents' on page 2 undefined on input 
+line 12.
+
+
+LaTeX Warning: Citation `Li:2009:DDA:1683304.1684620' on page 2 undefined on in
+put line 12.
+
+
+LaTeX Warning: Citation `Soon:10' on page 2 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Bakshi:10' on page 2 undefined on input line 23.
+
+
+LaTeX Warning: Citation `Liu:2010:NFD:1866835.1866849' on page 2 undefined on i
+nput line 23.
+
+
+LaTeX Warning: Citation `infoexame' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Citation `tdl4' on page 2 undefined on input line 25.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
+ [2])
+(./TR.tex
+
+LaTeX Warning: Citation `1039856' on page 3 undefined on input line 1.
+
+
+LaTeX Warning: Citation `Hazelhurst:2008:SCU:1456659.1456671' on page 3 undefin
+ed on input line 3.
+
+
+LaTeX Warning: Citation `Verkaik:2006:PCD:1162666.1162673' on page 3 undefined 
+on input line 10.
+
+
+LaTeX Warning: Citation `Bakshi:10' on page 3 undefined on input line 15.
+
 [3]
-Overfull \hbox (10.8088pt too wide) in paragraph at lines 150--151
-\OT1/ptm/m/n/12 mente ap[]os a detec[][]ao do ata-que. Com fil-tra-gem ro-busta
- de tr[]afego e blo-queio de requisi[][]oes
- []
+
+LaTeX Warning: Citation `Walfish:2010:DDO:1731060.1731063' on page 4 undefined 
+on input line 23.
 
 
-Overfull \hbox (5.40782pt too wide) in paragraph at lines 150--151
-\OT1/ptm/m/n/12 n[]ao apro-va-das, forma-se um \OT1/ptm/m/it/12 over-lay \OT1/p
-tm/m/n/12 se-guro. O ser-vi-dor uti-liza me-ca-nis-mos de autentica[][]ao
- []
+LaTeX Warning: Citation `Dwork:1992:PVP:646757.705669' on page 4 undefined on i
+nput line 23.
+
+
+LaTeX Warning: Citation `Stavrou:2005:WOS:1090583.1648614' on page 4 undefined 
+on input line 30.
+
+
+LaTeX Warning: Citation `Keromytis:2002:SSO:964725.633032' on page 4 undefined 
+on input line 30.
+
+
+LaTeX Warning: Citation `Dietrich00analyzingdistributed' on page 4 undefined on
+ input line 30.
+
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <13> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 59.
+ (./arq.tex
+
+LaTeX Warning: Citation `Dhage:2011:IDS:1980022.1980076' on page 4 undefined on
+ input line 2.
 
 [4]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 182.
 
- (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1phv.fd
+LaTeX Warning: Reference `fig:arq' on page 5 undefined on input line 13.
+
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 25.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 182.
- [5]
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
+) [5]
+(./aval.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 214.
+(Font)              <7> on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 214.
+(Font)              <5> on input line 10.
+) (./conc.tex) (./crono.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 231.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+) (./proposta3.bbl [6] [7]) [8]
+(./proposta3.aux)
 
-(./proposta3.bbl [6] [7]) [8] (./proposta3.aux) ) 
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3180 strings out of 493748
- 45350 string characters out of 3143569
- 115004 words of memory out of 3000000
- 6422 multiletter control sequences out of 15000+200000
- 14539 words of font info for 39 fonts, out of 3000000 for 9000
+ 3200 strings out of 493748
+ 45504 string characters out of 3143569
+ 113724 words of memory out of 3000000
+ 6424 multiletter control sequences out of 15000+200000
+ 15072 words of font info for 40 fonts, out of 3000000 for 9000
  717 hyphenation exceptions out of 8191
- 43i,12n,40p,1168b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,12n,40p,1205b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on proposta3.dvi (8 pages, 41624 bytes).
+Output written on proposta3.dvi (8 pages, 41464 bytes).

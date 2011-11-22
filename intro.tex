@@ -1,0 +1,44 @@
+Diversas pesquisas e propostas têm sido desenvolvidas buscando soluções para problemas da Internet atual, que se propagam para a Internet do Futuro (IF). Tais problemas podem ser amplamente categorizados em nas áreas de mobilidade, qualidade de serviço e segurança, os quais ainda caminham para aceitáveis soluções.
+
+Alguns paradigmas mudaram nestas últimas décadas. Hoje, tem-se os dados e aplicações disponibilizados em localizações físicas distintas e desconhecidas. Outra grande mudança ocorreu na forma de administrar um sistema, que antes era local com seus usuários e servidores característicos. Agora, tal sistema é hospedado em ambientes construídos pelo compartilhamento de recursos de diversos sistemas autônomos (AS) e heterogêneos.
+
+O uso massivo dos recursos disponibilizados na Internet e toda a conectividade que este ambiente computacional proporciona, com serviços para uso pessoal, comercial ou acadêmico, torna este ambiente alvo fácil para códigos maliciosos, agravados pela forma como a arquitetura TCP/IP pode favorecer um atacante. O protocolo IP (\emph{Internet Protocol}) omite as informações da verdadeira identidade de um emissor, essa não autenticação da fonte permite ao atacante realizar o ataque contra a vítima, ainda permanecendo anônimo e impune.
+
+Apesar de esforços de pesquisadores por muitos anos, um tipo de ataque que ainda representa sérias ameaças a muitos servidores na Internet é o ataque de DoS (\emph{Denial of Service}), configurando-se como um dos principais desafios de segurança que atualmente se propaga para a IF. 
+
+
+A melhor forma de se defender deste tipo de ataque é a prevenção e a reação. O ataque por DoS não visa invadir um computador para obter informações confidenciais, nem tão pouco alterar informações armazenadas nele. Seu objetivo é a indisponibilizar um serviço que está sendo fornecido, utilizando-se do encaminhamento de grandes quantidades de tráfego ao hospedeiro do serviço, de forma que este não consiga responder a todas as requisições que lhe são encaminhadas. 
+
+O problema se torna ainda mais crítico quando diversos geradores de tráfego distribuídos intensificam o encaminhamento de tráfego, caracterizando um ataque de DDoS \emph{Distributed Denial of Service} \cite{Sachdeva08ddosincidents}. O resultado obtido é o congelamento, a reinicialização, ou ainda o esgotamento completo de recursos necessários do hospedeiro. Os serviços que mais sofrem com este tipo de ataque são aqueles que permitem requisições anônimas como serviços web. Assim, o desafio de eliminar os ataques de DDoS está na dificuldade de determinar a diferença entre pacotes legítimos e pacotes de atacantes \cite{Li:2009:DDA:1683304.1684620}.
+
+
+Com as novas arquiteturas de rede e de aplicações que configuram a IF, surgem sistemas complexos e robustos como \emph{clouds}, onde o desafio de mitigar ataques deste tipo torna-se ainda mais necessário.  O poder de
+alocar recursos para suportar um ataque deste tipo em \emph{cloud}  agora torna-se
+possível, porém crescem também os custos do usuário para manter tais recursos, o que
+carateriza-se como eDDoS (\emph{economic Distributed Denial of Service}) \cite{Soon:10}.
+  
+A maioria das soluções comuns oferecidas para mitigar DDoS em \emph{cloud} se baseiam inteiramente na maior alocação de
+recursos [referenciar???]. 
+%
+Algumas abordagens diferenciadas se mostram inadequadas por premissas que nem sempre são verdadeiras ou por serem custosas demais \cite{Bakshi:10}, \cite{Liu:2010:NFD:1866835.1866849}.
+%,  colocar mais referencias...... 
+Existem diversos registros de ataques que abalaram a Internet nos últimos tempos, como os ocorridos contra o Yahoo!, eBay, Amazon.com, e diversos outros \emph{sites} populares em fevereiro de 2000.  No início de 2011 se observou o ataque sofrido pelo hospedeiro de \emph{blogs}, WordPress, que enfrentou o pior ataque de DDoS de sua história \cite{infoexame}. Ataques deste tipo ainda estão por serem disparados em proporções alarmantes, confirmados por descobertas recentes da engenharia aplicada capaz de gerar redes de zumbis, como o caso da rede TDL-4 que é classificada por especialistas em segurança como “não perfeitamente, mas praticamente indestrutível”, com aproximadamente 4,5 milhões de infecções só em 2011 \cite{tdl4}. Portanto, a mitigação de DDoS em \emph{clouds} ainda demanda pesquisas.
+
+O objetivo deste trabalho é elaborar uma arquitetura para mitigação de ataques de
+DDoS executados sobre uma aplicação hospedada em uma \emph{cloud}. Esta
+arquitetura deverá monitorar o tráfego da aplicação e, quando
+detectar ocorrência de ataque de DDoS, será responsável por criar uma nova
+instância desta aplicação, garantindo que nenhum tráfego malicioso a alcance. 
+
+\textbf{CHANGEME},
+Para que este trabalho possa ser.....este artigo está divido conforme 
+Na primeira seção estão descritos a motivação e o objetivo deste trabalho, expondo o ambiente de problema e solução que será abordado pela pesquisa. NA seção dois, um levantamento dos trabalhos relacionados é descrito para que se posicione quanto as soluções já existentes. O cenário/arquitetura de .....na seção três
+
+%
+%Uma arquitetura de \emph{cloud} pode representar um ambiente propício a ataques por ser usado por diversas pessoas de diversas organizações com suas aplicações e sem o menor controle ou entendimento das configurações ou rede envolvida.
+%
+%Nos trabalhamos com o targeted attack????
+%In a tar-
+%geted attack, an adversary wants to gain a critical mass in a
+%specific subnet, for example, to attack a specific application
+%hosted in that subnet.

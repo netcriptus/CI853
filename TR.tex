@@ -1,0 +1,30 @@
+A necessidade de proteger ou mitigar as arquiteturas de rede de ataques de DDoS tem sido reconhecida tanto no meio acadêmico quanto comercial. Segundo \cite{1039856}, três são as linhas de defesa contra ataques de DDoS, compreendendo a prevenção, a reação, ou ambas, na chamada defesa híbrida. A prevenção tenta eliminar a possibilidade de ataques de DDoS evitando negação de serviço para os clientes legítimos, enquanto a reação detecta o ataque e responde imediatamente, a abordagem híbrida combina os métodos prevenindo e reagindo à ataques.
+
+As pesquisas que envolvem propostas de mitigação para DDoS em arquiteturas de \emph{cloud}, ainda são consideradas incipientes e distantes de uma convergência. Dentre as poucas propostas para estes ambientes destaca-se o \emph{framework} pró-ativo CluB, criado por \cite{Hazelhurst:2008:SCU:1456659.1456671}, que considera uma \emph{cloud} como uma rede constituída de um conjunto de \emph{clusters}, ou \emph{Autonomous Systems} (AS) e sugere
+que sejam selecionados determinados roteadores para análise de tráfego, dispostos de forma distribuída para evitar que as requisições maliciosas alcancem a aplicação. Estes roteadores ficam responsáveis por gerar \emph{tokens} de autenticação para legitimar os pacotes e a autenticação corresponde à entrada, saída ou trânsito na arquitetura. Cada \emph{cluster} tem seu código de autenticação e os códigos são trocados periodicamente, podendo ser gerados por uma função \emph{hash}, como MD5 ou SHA. O uso de ferramentas apropriadas de criptografia e atualizações periódicas de componentes da infraestrutura são colocadas como parte da proposta do CluB.
+
+
+
+Neste \emph{framework}, todo pacote, malicioso ou não, precisa ser verificado para entrar, sair ou transitar na arquitetura. Cada roteador alocado  deverá realizar a verificação, o que torna-se custoso quanto ao \emph{overhead} causado pela autenticação de cada pacote. Também é necessária a implantação e atualização dos algoritmos de análise de tráfego na arquitetura onde estaria sendo utilizado o CluB. Esta questão torna-se inviável ao se tratar de uma \emph{cloud}, devido à nebulosidade de sua arquitetura e infraestrutura.
+
+\cite{Verkaik:2006:PCD:1162666.1162673} apresentam outra proposta pró-ativa, que emprega Comunidades de Interesse (COIs) para capturar comportamento coletivo das entidades remotas e as usa para predizer o comportamento futuro. Tal proposta se baseia no fato de que clientes que tiveram relacionamentos legítimos anteriormente possuem bons indícios e podem ser consideradas legítimos. Estas afirmações são geradas da observação de comunicações normais da rede e são utilizadas em conjunto com políticas específicas do cliente para mitigar pró-ativamente os ataques de DDoS usando mecanismos existentes nos roteadores. 
+%
+Entretanto, a identificação dos clientes passados não é tão trivial. Além do pequeno \emph{overhead} gerado pela verificação, endereços IPs são normalmente dinâmicos e a exigência da realização de \emph{login} para a identificação não é possível, dado que o ataque de DDoS pode a impossibilitar.
+
+
+O trabalho de \cite{Bakshi:10} propõe tratar ataques através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, a proposta busca detectar os atacantes através de PINGs - caso um cliente suspeito de ser atacante não responda ao PING, ele é considerado como um atacante, de fato. Desta maneira, apenas os clientes que responderem ao PING serão 
+redirecionados para a nova instância da aplicação. Entretanto, tal abordagem depende da premissa que atacantes jamais responderão a PINGs e que clientes genuínos sempre responderão, o que nem sempre condiz com a realidade.
+
+Obviamente, a eficácia de todos os esquemas depende criticamente da capacidade de se identificar os clientes legítimos. 
+
+
+%Filtro de Bloom
+
+\cite{Walfish:2010:DDO:1731060.1731063} apresenta uma forma de mitigação por ataque classificada como defesa baseada em recursos \cite{Dwork:1992:PVP:646757.705669}. A mitigação emprega o procedimento de que toda vez que um determinado limite de banda seja consumido com requisições para um servidor, este servidor, antes que seus recursos se esgotem, encoraja seus clientes a enviar altos volumes de tráfego. Dado que os atacantes já estariam usando sua capacidade máxima, eles não poderiam reagir ao encorajamento. A proposta se baseia na premissa que bons clientes tem condições de aumentar seu uso de banda e reagir de forma drástica ao encorajamento. O resultado pretendido é que os bons clientes dominem os maus clientes ao capturar uma fração maior de recursos do servidor. O cliente só será atendido caso ele tenha banda o suficiente para se sobressair mediante o tráfego dos atacantes. Um tanto curiosa, esta proposta ocasiona problemas como %a reação apenas quando o servidor já está sendo atacado e o procedimento 
+o encorajamento a recebimento de ainda mais tráfego em cenários de ataque - 
+% do que o próprio ataque poderia produzir, ou muitas vezes maior, 
+dificilmente um serviço conseguirá atender a tantas requisições. 
+
+
+
+WebSoS \cite{Stavrou:2005:WOS:1090583.1648614} é uma adaptação de \emph{Secure Overlay Services} (SOS) \cite{Keromytis:2002:SSO:964725.633032} que mitiga DDoS em servidores web protegendo-os imediatamente após a detecção do ataque. Com filtragem robusta de tráfego e bloqueio de requisições não aprovadas, forma-se um \emph{overlay} seguro. O servidor utiliza mecanismos de autenticação criptográfica ou um teste gráfico de Turing \cite{Dietrich00analyzingdistributed} para diferenciar clientes humanos de \emph{scripts} de ataque. Estes procedimentos, segundo os testes dos autores, não sobrecarregam o funcionamento do serviço, porém exigem que os roteadores localizados no perímetro do servidor sejam configurados para controlar o tráfego, procedimento inviável para arquiteturas de \emph{cloud}.

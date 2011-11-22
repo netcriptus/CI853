@@ -1,0 +1,42 @@
+Uma arquitetura em \emph{cloud} envolve comunicação de inúmeros componentes com APIs (\emph{Application Programing Interface}), geralmente de serviços web. Os usuários desta arquitetura não sabem e não precisam saber sobre a localização de seus dados ou aplicações que desejem utilizar, porém precisam aceitar e dependem  dos níveis de segurança vigentes, que são tópicos preocupantes para administradores.
+A segurança em \emph{cloud} compreende as áreas de segurança de dados e da rede, segundo \cite{Dhage:2011:IDS:1980022.1980076}:  
+
+Enquanto um ataque em dados afeta um número restrito de usuários, um ataque na rede pode comprometer diversos usuários. Um ataque de DDos em uma \emph{cloud} compreende um ataque a segurança em rede, portanto é de suma importância. 
+Um dos mais importantes fatores para detectar ataques de DDoS é encontrar a correlação entre diferentes fluxos para um mesmo destino.
+
+Com a nova infraestrutura de recursos criada pelas \emph{clouds}, existe a possibilidade de se mover fisicamente uma aplicação para outro endereço quando ela é atacada por DDoS. Assim, possibilita-se a tolerância à falhas e a conservação de recursos despendidos, pois este novo endereço só será conhecido por solicitantes legítimos.
+
+Este trabalho propõe uma arquitetura híbrida para mitigar este tipo de ataque em \emph{cloud} de forma autônoma e independente. Ele se diferencia de outras propostas pela independência de qualquer aplicação ou protocolo, por prover acurácia na diferenciação entre o tráfego legítimo e o atacante, por não onerar financeiramente o uso dos recursos, e por minimizar os problemas causados pelo ataque sem intervenção humana.
+
+A arquitetura proposta poderá ser utilizada por qualquer aplicação hospedada em uma \emph{cloud} que, ao sofrer indícios de um ataque DDoS, filtra o tráfego legítimo e encaminha apenas este para uma nova instância da mesma aplicação. 
+
+Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo geral chamado de Gerenciador de Tráfego (GF), que não se comunica diretamente com a aplicação. As operações realizadas pelo módulo GF são divididas em quatro sub-módulos:
+
+\begin{enumerate}[i]
+  \item Analizador de Tráfego (AT);
+  \item Redirecionador de Tráfego(RT);
+  \item Gerenciador de \emph{Blacklist}(GB);
+  \item Instanciador de Nova Aplicação(INA).
+\end{enumerate}
+
+\begin{figure}[b!]
+\centering
+%includegraphics[width=0.55\textwidth]{arq.eps}
+\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
+\label{fig:arq}
+\end{figure}
+
+
+
+O sub módulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este sub módulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o sub módulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente. Com isso, o sub módulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionados à nova aplicação.
+
+Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
+
+Contudo, para previnir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookies} em sua máquina. Este procedimento garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicação, dado que atacantes de DDoS não irão manter \emph{cookies}.
+ 
+Focamos na estimativa de quantidade de tráfego para direcionar o tráfego pelo módulo 
+
+
+Falar sobre:
+Banco de dados Redis, chave, valor....
+Blacklist com TTL para reenvio de novo endereco da aplicacao, para onde ela foi movida, verificar a questao de performance...
