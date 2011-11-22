@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage{sbc-template}
-
+\usepackage{color}
 \usepackage{graphicx}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
@@ -32,6 +32,7 @@ Nadine Lipa Pari\inst{1}
 
    
 \address{Departamento de Informática -- Universidade Federal do Paraná\\
+NR2 - Núcleo de Redes Sem Fio e Redes Avançadas\\
   Caixa Postal 19.081 -- 81.531-980 -- Curitiba -- PR -- Brasil
   \email{\{cmenegazzo,fcb06,fhgielow,nelpari\}@inf.ufpr.br}
 }     
@@ -48,8 +49,7 @@ Nadine Lipa Pari\inst{1}
 % \end{center}
 % }
 \section*{\emph{Resumo}}
-\emph{Aqui sera colocado o resumo deste trabalho}
-A maioria das propostas para mitigar DDoS são de natureza reativa.
+Ataques de DDoS \emph{Distributed Denial of Service} frequentemente são negligenciados por representarem apenas interrupção de funcionamento normal dos recursos disponíveis. Porém, tratando-se de aplicações destinadas ao comércio eletrônico, uma parada do serviço pode representar grandes perdas financeiras. Com o surgimento da Internet do Futuro e arquiteturas como \emph{cloud}, a mitigação deste tipo de ameaça com o acréscimo de recursos para as aplicações, torna-se uma alternativa viável, porém acarreta problema de eDDoS (\emph{economic Distributed Denial of Service}). Este artigo apresenta uma proposta de mitigação de ataque por DDoS direcionado a uma aplicação hospedada em uma \emph{cloud} com o redirecionamento, apenas de requisições confiáveis, à uma nova instância da aplicação na mesma arquitetura.
 
 %\section{divisões do artigo}
 % 2-trabalhos correlatos - sessão para revisar alguns mecanismos detecção e de mitigação de DDoS
@@ -178,7 +178,7 @@ Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo 
 
 \begin{figure}[b!]
 \centering
-includegraphics[width=0.55\textwidth]{arq.eps}
+%includegraphics[width=0.55\textwidth]{arq.eps}
 \caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
 \label{fig:arq}
 \end{figure}
@@ -189,7 +189,7 @@ O sub módulo AT observa o comportamento do tráfego de entrada para a aplicaç�
 
 Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
 
-Contudo, para previnir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookies} em sua máquina. Este procediemnto garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicaço, dado que atacantes de DDoS não irão manter \emph{cookies}.
+Contudo, para previnir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookies} em sua máquina. Este procedimento garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicação, dado que atacantes de DDoS não irão manter \emph{cookies}.
  
 Focamos na estimativa de quantidade de tráfego para direcionar o tráfego pelo módulo 
 
@@ -214,10 +214,12 @@ Com isso, para a análise, serão utilizadas ferramentas que geram requisições
 Como métricas, poderão ser utilizados o \textbf{tempo de resposta do servidor para requisições atendidas}, a \textbf{taxa de requisições atendidas com relação ao número de clientes}, a \textbf{carga gerada pelos módulos da arquitetura de acordo com o número de clientes}\footnote{note que o termo ``clientes'', aqui, engloba tanto clientes legítimos quanto atacantes.}. Novas métricas podem vir a serem consideradas, de acordo com a pesquisa que se sucederá.
 
 \section{Conclusão}
-Este trabalho apresentou uma proposta de arquitetura de mitigação para ataques de DDoS direcionados à aplicações hospedadas em \emph{cloud}. A arquitetura apresentará características de independência da 
+Este trabalho apresentou uma proposta de arquitetura de mitigação para ataques de DDoS direcionados à aplicações web hospedadas em \emph{cloud}. A arquitetura é dependente apenas da existência do ambiente na \emph{cloud}. Os quatro sub módulos especificados garantem o funcionamento das etapas de forma autônoma até mesmo para gerar uma nova instância da aplicação. Assim como, permitirá livre acesso aos clientes legítimos, desde que atendam um redirecionamento solicitado. O uso da \emph{blacklist} terá gerencimento eficiente pelo uso de tempo de validade, que no caso de atacantes, terá aumento exponencial para reincidências.
+
+
 
 \section{Cronograma}
-
+O desenvolvimento deste trabalho de pesquisa segue as etapas descritas no cronograma descrito abaixo, onde '$\circ$' define as atividades já realizadas e '$\bullet$' as atividades a serem desenvolvidas 
 {\footnotesize
 \center
 \begin{table}[ht!]
@@ -229,19 +231,27 @@ Este trabalho apresentou uma proposta de arquitetura de mitigação para ataques
       & \textbf{Nov/1} & \textbf{Nov/2} & \textbf{Nov/3} & \textbf{Nov/4} & \textbf{Dez/1} & \textbf{Dez/2} & \textbf{Dez/3} \\
 \hline
 \hline
-Elaboração da proposta de solução      & $\bullet$ & $\bullet$ &  &  &  &  &  \\
-\hline
-Estudo de métricas de desempenho      &  & $\bullet$ &  &  &  & &  \\
-\hline
-Pesquisa sobre detecção de DDoS      &  & $\bullet$ &  &  &  &  &  \\
-\hline
-Pesquisa sobre ferramentas       &  &  & $\bullet$ &  &  &  &  \\
+Elaboração da proposta de solução      &  {$\circ$} & {$\circ$} &  &  &  &  &  \\
+\hline						
+%&  {\color{green}$\bullet$} & {\color{green}$\bullet$} &  &  &  &  &  \\
+Estudo de métricas de desempenho      &  & {$\circ$} & $\bullet$ &  &  & &  \\
+\hline									
+
+Pesquisa sobre detecção de DDoS      &  & {$\circ$} & $\bullet$  &  &  &  &  \\
+\hline									
+
+
+Pesquisa sobre ferramentas       &  &  & {$\circ$} &  &  &  &  \\
 para geração de requisições       &   &   &   &   &   &   &   \\
-\hline
-Implementação dos módulos      &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ &  \\
-\hline
+\hline									
+
+
+Implementação dos módulos      &  &  &  {$\circ$} & $\bullet$ & $\bullet$ & $\bullet$ &  \\
+\hline									
+
 Escrita do relatório final      &  &   &  & $\bullet$  & $\bullet$ &  $\bullet$ & $\bullet$ \\
 \hline
+
 Experimentação      &  &  &  &  &  & $\bullet$ & $\bullet$ \\
 \hline
 \end{tabular}
