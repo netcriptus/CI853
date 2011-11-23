@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: proposta3.aux
 The style file: sbc.bst
 Database file #1: proposta3.bib
-You've used 16 entries,
+You've used 25 entries,
             1935 wiz_defined-function locations,
-            583 strings with 7350 characters,
-and the built_in function-call counts, 7290 in all, are:
-= -- 752
-> -- 278
-< -- 16
-+ -- 96
-- -- 94
-* -- 566
-:= -- 1200
-add.period$ -- 51
-call.type$ -- 16
-change.case$ -- 127
-chr.to.int$ -- 16
-cite$ -- 16
-duplicate$ -- 309
-empty$ -- 511
-format.name$ -- 116
-if$ -- 1508
+            624 strings with 8749 characters,
+and the built_in function-call counts, 10880 in all, are:
+= -- 1112
+> -- 426
+< -- 24
++ -- 146
+- -- 144
+* -- 829
+:= -- 1808
+add.period$ -- 75
+call.type$ -- 25
+change.case$ -- 197
+chr.to.int$ -- 25
+cite$ -- 25
+duplicate$ -- 465
+empty$ -- 749
+format.name$ -- 177
+if$ -- 2240
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 80
-num.names$ -- 48
-pop$ -- 116
+missing$ -- 18
+newline$ -- 121
+num.names$ -- 75
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 197
 quote$ -- 0
-skip$ -- 248
+skip$ -- 381
 stack$ -- 0
-substring$ -- 521
-swap$ -- 79
-text.length$ -- 8
+substring$ -- 743
+swap$ -- 119
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 150
 warning$ -- 0
-while$ -- 62
+while$ -- 87
 width$ -- 0
-write$ -- 218
+write$ -- 325

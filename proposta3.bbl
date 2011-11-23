@@ -52,6 +52,10 @@ Hazelhurst, S. (2008).
   on IT research in developing countries: riding the wave of technology},
   SAICSIT '08, pages 94--103, New York, NY, USA. ACM.
 
+\bibitem[Heroku 2011]{heroku}
+Heroku (2011).
+\newblock http://www.heroku.com/.
+
 \bibitem[Keromytis et~al. 2002]{Keromytis:2002:SSO:964725.633032}
 Keromytis, A.~D., Misra, V., and Rubenstein, D. (2002).
 \newblock Sos: secure overlay services.
@@ -76,6 +80,10 @@ Liu, H. (2010).
 \newblock In {\em Proceedings of the 2010 ACM workshop on Cloud computing
   security workshop}, CCSW '10, pages 65--76, New York, NY, USA. ACM.
 
+\bibitem[LOIC 2011]{loic}
+LOIC (2011).
+\newblock http://sourceforge.net/projects/loic/.
+
 \bibitem[Mirkovic et~al. 2007]{Mirkovic:2007:TUM:1281700.1281708}
 Mirkovic, J., Hussain, A., Wilson, B., Fahmy, S., Reiher, P., Thomas, R., Yao,
   W.-M., and Schwab, S. (2007).
@@ -93,6 +101,10 @@ Peng, T., Leckie, C., and Ramamohanarao, K. (2007).
 \newblock Survey of network-based defense mechanisms countering the dos and
   ddos problems.
 \newblock {\em ACM Comput. Surv.}, 39.
+
+\bibitem[Redis 2011]{redis}
+Redis (2011).
+\newblock http://redis.io/.
 
 \bibitem[Sachdeva et~al. 2009]{4809152}
 Sachdeva, M., Kumar, K., Singh, G., and Singh, K. (2009).
