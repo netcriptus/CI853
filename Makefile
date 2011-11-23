@@ -1,8 +1,8 @@
-FILE=proposta3
+FILE=proposta
 LATEX=${FILE}.tex
 DVI=${FILE}.dvi
 PS=${FILE}.ps
-PDF=proposta3.pdf
+PDF=proposta.pdf
 
 forsure: all
 
