@@ -13,6 +13,14 @@ Este trabalho propõe uma arquitetura híbrida para mitigar ataques de DDoS em \
 %
 A arquitetura proposta poderá ser utilizada por qualquer aplicação hospedada em uma \emph{cloud} que, ao sofrer indícios de um ataque DDoS, filtra o tráfego legítimo e encaminha apenas este para uma nova instância da mesma aplicação. 
 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.55\textwidth]{arq.eps}
+\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
+\label{fig:arq}
+\end{figure}
+
 Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo geral chamado de Gerenciador de Tráfego (GT), que não se comunica diretamente com a aplicação. Note que a instância do banco de dados é representada exterior às demais instâncias \emph{cloud}, pelo fato de que este banco de dados também está nas nuvens, e pode ser acessado de qualquer outra instância \emph{cloud}. As operações realizadas pelo módulo GT são divididas em quatro submódulos:
 % GF virou GT XXXXX
 
@@ -23,14 +31,6 @@ Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo 
   \item Gerenciador de \emph{Blacklist}(GB);
   \item Instanciador de Nova Aplicação(INA).
 \end{enumerate}
-
-\begin{figure}[b!]
-\centering
-\includegraphics[width=0.55\textwidth]{arq.eps}
-\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
-\label{fig:arq}
-\end{figure}
-
 
 
 O submódulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este submódulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o submódulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente\footnote{Com a criação da nova instância da aplicação, a antiga é desativada. A primeira instância da \emph{cloud} servirá apenas para redirecionar o tráfego}. Com isso, o submódulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionados à nova aplicação.
