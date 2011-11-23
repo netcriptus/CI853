@@ -7,7 +7,7 @@ PDF=proposta3.pdf
 forsure: all
 
 all: pdf
-	mv -f ${FILE}.pdf ${PDF}
+	mv -f ${FILE}.pdf ${PDF} 
 	[ -d logs ] || mkdir logs
 	mv -f *.blg *.bbl *.aux *.dvi *.log *.ps logs
 
