@@ -7,6 +7,12 @@ Bakshi, A. and Yogesh1, B. (2010).
 \newblock In {\em Communication Software and Networks, 2010. ICCSN '10. Second
   International Conference on}, pages 260 -- 264.
 
+\bibitem[Bellaiche and Gregoire 2008]{4600003}
+Bellaiche, M. and Gregoire, J.-C. (2008).
+\newblock Measuring defense systems against flooding attacks.
+\newblock In {\em Wireless Communications and Mobile Computing Conference,
+  2008. IWCMC '08. International}, pages 600 --605.
+
 \bibitem[Chang 2002]{1039856}
 Chang, R. (2002).
 \newblock Defending against flooding-based distributed denial-of-service
@@ -70,10 +76,29 @@ Liu, H. (2010).
 \newblock In {\em Proceedings of the 2010 ACM workshop on Cloud computing
   security workshop}, CCSW '10, pages 65--76, New York, NY, USA. ACM.
 
+\bibitem[Mirkovic et~al. 2007]{Mirkovic:2007:TUM:1281700.1281708}
+Mirkovic, J., Hussain, A., Wilson, B., Fahmy, S., Reiher, P., Thomas, R., Yao,
+  W.-M., and Schwab, S. (2007).
+\newblock Towards user-centric metrics for denial-of-service measurement.
+\newblock In {\em Proceedings of the 2007 workshop on Experimental computer
+  science}, ExpCS '07, New York, NY, USA. ACM.
+
 \bibitem[News 2011]{tdl4}
 News, B. (2011).
 \newblock http://www.bbc.co.uk/portuguese/noticias/2011/06/110630\_botnet\_
   descoberta\_fn.shtml.
+
+\bibitem[Peng et~al. 2007]{Peng:2007:SND:1216370.1216373}
+Peng, T., Leckie, C., and Ramamohanarao, K. (2007).
+\newblock Survey of network-based defense mechanisms countering the dos and
+  ddos problems.
+\newblock {\em ACM Comput. Surv.}, 39.
+
+\bibitem[Sachdeva et~al. 2009]{4809152}
+Sachdeva, M., Kumar, K., Singh, G., and Singh, K. (2009).
+\newblock Performance analysis of web service under ddos attacks.
+\newblock In {\em Advance Computing Conference, 2009. IACC 2009. IEEE
+  International}, pages 1002 --1007.
 
 \bibitem[Sachdeva et~al. 2008]{Sachdeva08ddosincidents}
 Sachdeva, M., Singh, G., Kumar, K., and Singh, K. (2008).
