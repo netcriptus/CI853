@@ -38,3 +38,16 @@ O submódulo AT observa o comportamento do tráfego de entrada para a aplicaçã
 Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
 
 Contudo, para prevenir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente, ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookie} em sua máquina. Este procedimento garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicação, dado que atacantes de DDoS não irão manter \emph{cookies}. Por fim,  tal processo de reinstanciação de aplicação e redirecionamento de tráfego pode ser repetido recursivamente, até um dado número máximo de redirecionamentos.
+
+A Figura~\ref{fig:cen} ilustra um cenário sob ataque de DDoS, sendo que os clientes são representados pelos ícones dos diversos navegadores, e a nave é o logo da aplicação LOIC (\emph{Low Orbit Ion Cannon}). À esquerda, todos eles enviam seu tráfego para o que imaginam ser a instância da aplicação. Considerando um cenário sob ataque, a aplicação será replicada, e a sua instância original servirá para redirecionar o tráfego legítimo até a aplicação nova. À direita, é ilustrado o resultado do redirecionamento: clientes genuínos conseguiram atingir a instância nova da aplicação, enquanto os atacantes manterão o ataque na antiga instância de \emph{cloud}, que agora opera apenas redirecionando tráfego.
+
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.40\textwidth]{an1.eps}
+	% \caption{bla}
+	\hskip 1cm
+	\includegraphics[width=0.40\textwidth]{an2.eps}
+	\caption{Comportamento do tráfego em um cenário sob ataque}
+	\label{fig:cen}
+\end{figure}

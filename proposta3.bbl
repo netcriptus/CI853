@@ -130,4 +130,9 @@ Walfish, M., Vutukuru, M., Balakrishnan, H., Karger, D., and Shenker, S.
 \newblock Ddos defense by offense.
 \newblock {\em ACM Trans. Comput. Syst.}, 28:3:1--3:54.
 
+\bibitem[Wired 2010]{titstorm}
+Wired (2010).
+\newblock
+  http://www.wired.com/threatlevel/2010/02/anonymous-unfurls-operation-titstorm/.
+
 \end{thebibliography}
