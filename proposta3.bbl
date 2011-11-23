@@ -111,6 +111,13 @@ Stavrou, A., Cook, D.~L., Morein, W.~G., Keromytis, A.~D., Misra, V., and
   denial of service attacks.
 \newblock {\em Comput. Netw.}, 48:781--807.
 
+\bibitem[Thapngam et~al. 2011]{Thapngam:2011p27061}
+Thapngam, T., Yu, S., Zhou, W., and Beliakov, G. (2011).
+\newblock Discriminating ddos attack traffic from flash crowd through packet
+  arrival patterns.
+\newblock {\em Computer Communications Workshops (INFOCOM WKSHPS), 2011 IEEE
+  Conference on}, pages 952 -- 957.
+
 \bibitem[Verkaik et~al. 2006]{Verkaik:2006:PCD:1162666.1162673}
 Verkaik, P., Spatscheck, O., Van~der Merwe, J., and Snoeren, A.~C. (2006).
 \newblock Primed: community-of-interest-based ddos mitigation.
