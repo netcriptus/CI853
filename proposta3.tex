@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{article}
-\usepackage{sbc-template}
+\usepackage{templates/sbc-template}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage[brazil]{babel}
@@ -41,23 +41,23 @@ NR2 - Núcleo de Redes Sem Fio e Redes Avançadas\\
 
 
 \begin{resumo}
-\input{resumo}
+\input{parts/resumo}
 \end{resumo}
 
 
 
 \section{Introdução}
-\input{intro}
+\input{parts/intro}
 
 
 \section{Trabalhos Relacionados}
-\input{TR}
+\input{parts/TR}
  
 
 
 
 \section{Arquitetura para Mitigação de DDoS em \emph{Cloud}}
-\input{arq}
+\input{parts/arq}
 
 
 \section{Implementação}
@@ -66,31 +66,31 @@ NR2 - Núcleo de Redes Sem Fio e Redes Avançadas\\
 % \input{ddos}
 
 % \subsection{Mecanismo de mitigação}
-\input{impl}
+\input{parts/impl}
 
 
 
 
 \section{Descrição da Avaliação}
-\input{aval}
+\input{parts/aval}
 
 \subsection{Cenários}
-\input{ddossim}
+\input{parts/ddossim}
 
 \section{Conclusão}
-\input{conc}
+\input{parts/conc}
 
 
 \section{Cronograma}
-\input{crono}
+\input{parts/crono}
 
 \section{Acknowledment}
-\input{ack}
+\input{parts/ack}
 
 
 % \newpage
 % \bibliographystyle{unsrt}
 
-\bibliographystyle{sbc}
-\bibliography{proposta3}
+\bibliographystyle{templates/sbc}
+\bibliography{parts/proposta3}
 \end{document}
