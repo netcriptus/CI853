@@ -8,3 +8,5 @@ logs/*
 *.log
 *.gz
 *.dvi
+*.bbl
+*.blg
