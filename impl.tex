@@ -10,7 +10,4 @@ Uma particularidade interessante do \emph{framework} RoR é a existência de um 
 
 A \emph{blacklist} em si e diversas outras variáveis de controle serão gerenciadas pela base de dados em \emph{cloud} Redis. Esta base de dados é famosa pela sua simplicidade e eficiência. Ela basicamente mapeia \textbf{chave} e \textbf{dado}, oferecendo tempos de escrita e leitura correspondentes à \emph{hashing}. Desta forma, uma possibilidade para a implementação da \emph{blacklist} é o uso do Redis, utilizando o IP de um cliente como chave, e o tempo que este cliente permanecerá bloqueado como dado. Por ser, abstratamente, um mecanismo de \emph{hashing}, o tempo de checagem por um cliente será O(1), o que é excelente para um mecanismo que vai filtrar todo tráfego que chega à aplicação.
 
-
-
-
-
+Por fim, um aspecto interessante do uso do Heroku são os diversos \emph{addons} já customizados para o uso nele. Em particular, existe um \emph{addon} chamado \emph{New Relic} que é designado à coleta de diversas métricas para a análise de desempenho. Com seu uso, será possível saber com precisão o que se passa em todas as instâncias \emph{cloud} de uma perspectiva diretamente interna à esta \emph{cloud}. Assim, poderemos coletar dados não só da perspectiva externa à \emph{cloud}, perspectiva de usuário, como também, de perspectiva interna~à~ela.

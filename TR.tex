@@ -17,7 +17,6 @@ Entretanto, a identificação dos clientes passados não é tão trivial. Além 
 Em \cite{Bakshi:10}, ataques são tratados através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, a proposta busca identificar os atacantes através de PINGs: caso um cliente suspeito de ser atacante não responda ao PING, ele é considerado como um atacante, de fato. Desta maneira, apenas os clientes que responderem ao PING serão 
 redirecionados para a nova instância da aplicação. Entretanto, tal abordagem depende da premissa que atacantes jamais responderão a PINGs e que clientes genuínos sempre responderão, o que nem sempre condiz com a realidade.
 
-Obviamente, a eficácia de todos os esquemas depende criticamente da capacidade de se identificar ou filtrar os clientes legítimos. 
 
 
 %Filtro de Bloom
@@ -29,5 +28,6 @@ o encorajamento a recebimento de ainda mais tráfego em cenários de ataque.
 Dificilmente um serviço conseguirá atender a tantas requisições e clientes legítimos não necessariamente dominarão o tráfego que chega ao servidor.
 
 
-
+Obviamente, a eficácia de todos os esquemas depende criticamente da capacidade de se identificar ou filtrar os clientes legítimos. 
+%
 WebSoS \cite{Stavrou:2005:WOS:1090583.1648614} é uma adaptação de \emph{Secure Overlay Services} (SOS) \cite{Keromytis:2002:SSO:964725.633032} que mitiga DDoS em servidores web, reativamente após a detecção do ataque. Com uma filtragem robusta de tráfego e bloqueio de requisições~não aprovadas, forma-se um \emph{overlay} seguro. O servidor utiliza mecanismos de autenticação criptográfica e um teste gráfico de Turing \cite{Dietrich00analyzingdistributed} para diferenciar clientes humanos de \emph{scripts} de ataque. Estes procedimentos, segundo os testes dos autores, não sobrecarregam o funcionamento do serviço, porém exigem que os roteadores localizados no perímetro do servidor sejam configurados para controlar o tráfego, procedimento inviável para arquiteturas de \emph{cloud}.
