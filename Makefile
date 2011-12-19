@@ -9,22 +9,15 @@ forsure: all
 all: pdf
 	mv -f ${FILE}.pdf ${PDF} 
 	[ -d logs ] || mkdir logs
-	mv -f *.blg *.bbl *.aux *.dvi *.log *.ps logs
+	mv -f *.blg *.bbl *.aux *.log logs/
 
-pdf:ps
-	ps2pdf ${PS}
-
-ps:dvi
-	dvips ${DVI}
-
-
-dvi: ${LATEX} bib
-	latex ${LATEX}
+pdf: bib
+	pdflatex ${FILE}
 
 bib: ${LATEX}
-	latex ${LATEX}
+	pdflatex ${LATEX}
 	bibtex ${FILE}
-	latex ${LATEX}
+	pdflatex ${LATEX}
 
 clean:
 	rm -rf *.blg *.bbl *.aux *.dvi *.log *.ps logs

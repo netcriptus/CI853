@@ -16,3 +16,16 @@ para a nova instância e garantirá que eles terão acesso direto nas próximas 
 Portanto, de acordo com as métricas especificadas por \cite{4600003}, este trabalho de pesquisa foi avaliado pelo uso de métricas como o tempo de resposta do servidor para requisições atendidas, a taxa de requisições atendidas com relação ao número de clientes, a carga gerada pelos módulos da arquitetura de acordo com o número de clientes \footnote{O termo ``clientes'', usado neste parágrafo engloba tanto clientes legítimos quanto atacantes.}. 
 
 Cabe ressaltar que este trabalho não necessita de uma previsão muito grande na detecção do tipo de ataque, no sentido de que é melhor realizar uma calibragem muito sensível e possuir falsos positivos do que possuir falsos negativos, isto se deve à natureza do mecanismo implementado. Se uma nova instância for criada e o tráfego for redirecionado à toa, o custo será de apenas alguns mínimos milisegundos de latência. Caso o mecanismo não detecte um ataque, o custo será muito mais significativo. Desta maneira, a avaliação quanto à falsos positivos não é crucial. % quanto a avaliação não detecção do ataque. 
+
+
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[height=8cm]{images/overhead-p1.pdf}
+	\includegraphics[height=8cm]{images/overhead-p2.pdf}
+	
+	% \caption{bla}
+	% \hskip 1cm
+	\caption{Funções da arquitetura de mitigação de DDoS}
+%	\label{fig:dfd}
+\end{figure}
