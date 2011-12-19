@@ -1,15 +1,15 @@
-FILE=proposta3
+FILE=proposta
 LATEX=${FILE}.tex
 DVI=${FILE}.dvi
 PS=${FILE}.ps
-PDF=proposta3.pdf
+PDF=proposta.pdf
 
 forsure: all
 
 all: pdf
-	mv -f ${FILE}.pdf ${PDF}
+	mv -f ${FILE}.pdf ${PDF} 
 	[ -d logs ] || mkdir logs
-	mv -f *.blg *.aux *.dvi *.log *.ps logs
+	mv -f *.blg *.bbl *.aux *.dvi *.log *.ps logs
 
 pdf:ps
 	ps2pdf ${PS}
@@ -27,4 +27,4 @@ bib: ${LATEX}
 	latex ${LATEX}
 
 clean:
-	rm -rf logs
+	rm -rf *.blg *.bbl *.aux *.dvi *.log *.ps logs

@@ -1,0 +1,18 @@
+%!TEX root = ./proposta3.tex
+
+
+%A avaliação de um sistema de defesa para ataques pode ser avaliado sobre os aspectos de sua construção. 
+% WTF esse trecho acima? xD
+%
+Uma solução para mitigar ataques pode ser avaliada quanto a sua capacidade de detectar ataque, assim como, a de reagir a ele. Outra abordagem para avaliar uma solução é quanto a sua capacidade de manter as condições normais de funcionamento do cenário de ataque, mesmo sob ataque. Segundo \cite{4600003} é importante para um sistema de defesa estimar diversos aspectos como: custo de desenvolvimento, desempenho, degradação do serviço e custo de robustez. 
+
+A maioria das métricas para calcular o impacto de ataques DDoS estão relacionadas com as medidas de eficiência dos padrões de defesa \cite{4809152}. Atualmente, são consideradas estratégias de medição da quantidade de tráfego legítimo que chega até a aplicação. Outros trabalhos tem se concentrado na medida do tempo de resposta para avaliar a eficiência de uma solução. \cite{Mirkovic:2007:TUM:1281700.1281708} utiliza um modelo baseado em \emph{threshold} como métrica para aferir o impacto de DDoS. Quando uma medida excede este \emph{threshold}, ocorre a  indicação da baixa qualidade do serviço. Esta medida é indicada para aplicações fim-a-fim, como o HTTP.
+
+\textbf{Arrumar verificar se foram estas levantadas nos gráficos}
+A etapa de avaliação do nosso mecanismo consistirá principalmente na análise
+da capacidade do servidor em atender novas requisições. Se o ataque de DDoS for devidamente
+mitigado, as requisições de atacantes serão ignoradas, após a inclusão do requisitante na \emph{blacklist}. Assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
+para a nova instância e garantirá que eles terão acesso direto nas próximas requisições. 
+Portanto, de acordo com as métricas especificadas por \cite{4600003}, este trabalho de pesquisa foi avaliado pelo uso de métricas como o tempo de resposta do servidor para requisições atendidas, a taxa de requisições atendidas com relação ao número de clientes, a carga gerada pelos módulos da arquitetura de acordo com o número de clientes \footnote{O termo ``clientes'', usado neste parágrafo engloba tanto clientes legítimos quanto atacantes.}. 
+
+Cabe ressaltar que este trabalho não necessita de uma previsão muito grande na detecção do tipo de ataque, no sentido de que é melhor realizar uma calibragem muito sensível e possuir falsos positivos do que possuir falsos negativos, isto se deve à natureza do mecanismo implementado. Se uma nova instância for criada e o tráfego for redirecionado à toa, o custo será de apenas alguns mínimos milisegundos de latência. Caso o mecanismo não detecte um ataque, o custo será muito mais significativo. Desta maneira, a avaliação quanto à falsos positivos não é crucial. % quanto a avaliação não detecção do ataque. 
