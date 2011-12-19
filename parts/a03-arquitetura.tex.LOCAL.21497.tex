@@ -7,11 +7,12 @@ A segurança em \emph{cloud} compreende as áreas de segurança de dados e da re
 Enquanto um ataque em dados afeta um número restrito de usuários, um ataque na rede pode comprometer diversos usuários simultaneamente. Como ataques de DDos em uma \emph{cloud} compreendem um ataque à segurança em rede, eles são de importância crítica.  
 %Um dos mais importantes fatores para detectar ataques de DDoS é encontrar a correlação entre diferentes fluxos para um mesmo destino.
 %
-Com a nova infraestrutura de recursos criada pelas \emph{clouds}, existe a possibilidade de se mover fisicamente uma aplicação para outro endereço quando ela é atacada por DDoS. Com isso, pode se garantir tolerância à falhas e conservação de recursos despendidos, pois este novo endereço só será conhecido por solicitantes legítimos.
+Com a nova infraestrutura de recursos criada pelas \emph{clouds}, existe a possibilidade de se mover fisicamente uma aplicação para outro endereço quando ela é atacada por DDoS. Com isso, é possibilitada a tolerância à falhas e a conservação de recursos despendidos, pois este novo endereço só será conhecido por solicitantes legítimos.
 
 Este trabalho propõe uma arquitetura para mitigar ataques de DDoS em \emph{clouds} de forma autônoma e independente. As diferenças desta para outras propostas se concentram na independência da aplicação hospedada, em prover acurácia na filtragem de tráfego legítimo, por não onerar financeiramente o uso dos recursos, e por minimizar os problemas causados pelo ataque sem intervenção humana.
 %
 A arquitetura proposta poderá ser utilizada por qualquer aplicação web hospedada em uma \emph{cloud} que, ao sofrer indícios de um ataque DDoS, filtra o tráfego legítimo e encaminha apenas este para uma nova instância da mesma aplicação. 
+
 
 \begin{figure}[h!]
 \centering
@@ -22,6 +23,14 @@ A arquitetura proposta poderá ser utilizada por qualquer aplicação web hosped
 
 Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo geral chamado de Gerenciador de Tráfego (GT), que não se comunica diretamente com a aplicação. Vale ressaltar que a instância do banco de dados é exterior às demais instâncias da \emph{cloud}, pelo fato de que este banco de dados também está nas nuvens, e pode ser acessado de qualquer outra instância \emph{cloud}. As operações realizadas pelo módulo GT são divididas em quatro submódulos:
 % GF virou GT XXXXX
+
+
+%\begin{enumerate}[i]
+%  \item Analizador de Tráfego (AT);
+%  \item Redirecionador de Tráfego (RT);
+%  \item Gerenciador de \emph{Blacklist} (GB);
+%  \item Instanciador de Nova Aplicação (INA).
+%\end{enumerate}
 
 
 O submódulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este submódulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o submódulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente\footnote{Com a criação da nova instância da aplicação, a antiga é desativada. A primeira instância da \emph{cloud} servirá apenas para redirecionar o tráfego}. Com isso, o submódulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionados à nova aplicação.
