@@ -1,10 +1,8 @@
 %!TEX root = ./proposta3.tex
 
-Diversas pesquisas e propostas têm sido desenvolvidas buscando soluções para problemas da Internet atual, que se propagam para a Internet do Futuro (IF). Tais problemas podem ser amplamente categorizados nas áreas de mobilidade, qualidade de serviço e segurança, os quais ainda caminham para soluções aceitáveis. % expandir o parágrafo com mais uma frase XXXXXXXXXXXXXXXX
+Diversas pesquisas e propostas têm sido desenvolvidas buscando soluções para os problemas da Internet atual, que se propagam para a Internet do Futuro (IF). Tais problemas podem ser amplamente categorizados nas áreas de mobilidade, qualidade de serviço e segurança, os quais ainda caminham para soluções aceitáveis, agravados pelo surgimento de novas arquiteturas. Hoje, tem-se os dados e aplicações disponibilizados em localizações físicas distintas e desconhecidas. Outra grande mudança ocorreu na forma de administrar um sistema, que antes era de âmbito mais local, com seus usuários e servidores característicos. Agora, tal sistema é hospedado em ambientes construídos pelo compartilhamento de recursos de diversos sistemas autônomos (AS) e heterogêneos. \cite{5486552}
 
-Alguns paradigmas mudaram nestas últimas décadas. Hoje, tem-se os dados e aplicações disponibilizados em localizações físicas distintas e desconhecidas. Outra grande mudança ocorreu na forma de administrar um sistema, que antes era de âmbito mais local, com seus usuários e servidores característicos. Agora, tal sistema é hospedado em ambientes construídos pelo compartilhamento de recursos de diversos sistemas autônomos (AS) e heterogêneos.
-
-O uso massivo dos recursos disponibilizados na Internet e toda a conectividade que este ambiente computacional proporciona com serviços para uso pessoal, comercial ou acadêmico, torna este ambiente um alvo visado para códigos maliciosos. Ademais, isso é agravado pela forma como a arquitetura TCP/IP pode favorecer um atacante. O protocolo IP (\emph{Internet Protocol}) omite as informações da verdadeira identidade de um emissor, essa não autenticação da fonte permite ao atacante realizar o ataque contra a vítima, podendo permanecer anônimo e impune. % UMA REFERENCIA AQUI É IMPORTANTE XXXXXXXXXXXXXXXX
+O uso massivo dos recursos disponibilizados na Internet e toda a conectividade que este ambiente computacional proporciona com serviços para uso pessoal, comercial ou acadêmico, torna este ambiente um alvo visado para códigos maliciosos. Ademais, isso é agravado pela forma como a arquitetura TCP/IP pode favorecer um atacante. O protocolo IP (\emph{Internet Protocol}) omite as informações da verdadeira identidade de um emissor, essa não autenticação da fonte permite ao atacante realizar o ataque contra a vítima, podendo permanecer anônimo e impune. \cite{1039856}
 
 Apesar de muitos anos de esforços de pesquisadores, um tipo de ataque ainda representa sérias ameaças a muitos servidores na Internet: o ataque de  \emph{Denial of Service} (DoS). Ele se configura como um dos principais desafios de segurança atualmente propagado para a IF, que interconecta muito mais dispositivos e indivíduos. 
 
@@ -14,19 +12,15 @@ Uma forma de se defender deste tipo de ataque é a prevenção e a reação. O a
 O problema se torna ainda mais severo quando diversos geradores de tráfego intensificam o encaminhamento de tráfego de maneira distribuída, caracterizando um ataque de \emph{Distributed Denial of Service} (DDoS \cite{Sachdeva08ddosincidents}). O resultado obtido é o congelamento, a reinicialização, ou ainda o esgotamento completo de recursos necessários ao hospedeiro. Os serviços que mais sofrem com este tipo de ataque são aqueles que permitem requisições anônimas, como serviços web. Assim, o desafio de eliminar os ataques de DDoS está na dificuldade de determinar a diferença entre pacotes legítimos e pacotes de atacantes \cite{Li:2009:DDA:1683304.1684620}.
 
 
-Com as novas arquiteturas de rede e de aplicações que configuram a IF, surgem sistemas complexos e robustos como \emph{clouds}, onde o desafio de mitigar ataques deste tipo torna-se ainda mais necessário.  Embora o poder de
-alocar recursos para suportar um ataque deste tipo  agora torna-se
-possível em um \emph{cloud}, crescem com isso também os custos do usuário para manter tais recursos. Tal reação
-carateriza o chamado \emph{economic DDoS} (eDDoS \cite{Soon:10}).
-  
-A maioria das soluções comumente oferecidas para mitigar DDoS em \emph{cloud} se baseiam inteiramente na maior alocação de
-recursos \cite{Peng:2007:SND:1216370.1216373}.  %% XXX
+Com as novas arquiteturas de rede e de aplicações que configuram a IF, surgem sistemas complexos e robustos como \emph{clouds}, onde o desafio de mitigar ataques deste tipo torna-se ainda mais necessário.  A maioria das soluções comumente oferecidas para mitigar DDoS em \emph{cloud} se baseiam inteiramente na maior alocação de
+recursos \cite{Peng:2007:SND:1216370.1216373}, porém crescem  também os custos do usuário para manter tais recursos. Este comportamento
+carateriza o chamado \emph{economic DDoS} (eDDoS \cite{Soon:10}).  %% XXX
 %
 Algumas abordagens diferenciadas se mostram inadequadas por premissas que nem sempre são verdadeiras ou por serem custosas demais \cite{Bakshi:10}, \cite{Liu:2010:NFD:1866835.1866849}.
 %,  colocar mais referencias...... 
 Existem diversos registros de ataques que abalaram a Internet nos últimos tempos, como os ocorridos contra o Yahoo!, eBay, Amazon.com e diversos outros \emph{sites} populares em fevereiro de 2000.  No início de 2011 se observou o ataque sofrido pelo hospedeiro de \emph{blogs}, WordPress, que enfrentou o pior ataque de DDoS de sua história \cite{infoexame}.
 
-Ataques deste tipo ainda são disparados em proporções alarmantes, de acordo com descobertas recentes que também revelam a engenharia aplicada que gera redes de zumbis. Um exemplo destas é a rede TDL-4, que é classificada por especialistas em segurança como “não perfeitamente, mas praticamente indestrutível”, com aproximadamente 4,5 milhões de infecções só em 2011 \cite{tdl4}.A partir de fevereiro 2010, o grupo ativista \textit{hacker} conhecido como \textit{Anonymous} começou uma série de ataques de cunho político e ideológico contra várias instituições de porte internacional \cite{titstorm}. A parte mais massiva desses ataques era constituída de DDoS \cite{infoexame}.  Assim, a mitigação de DDoS em \emph{clouds} ainda demanda pesquisas.
+Ataques deste tipo ainda são disparados em proporções alarmantes, de acordo com descobertas recentes que também revelam a engenharia aplicada que gera redes de zumbis. Um exemplo destas é a rede TDL-4, que é classificada por especialistas em segurança como “não perfeitamente, mas praticamente indestrutível”, com aproximadamente 4,5 milhões de infecções só em 2011 \cite{tdl4}. A partir de fevereiro 2010, o grupo ativista \textit{hacker} conhecido como \textit{Anonymous} começou uma série de ataques de cunho político e ideológico contra várias instituições de porte internacional \cite{titstorm}. A parte mais massiva desses ataques era constituída de DDoS \cite{infoexame}.  Assim, a mitigação de DDoS em \emph{clouds} ainda demanda pesquisas.
 
 O objetivo deste trabalho é elaborar uma arquitetura para mitigação de ataques de
 DDoS executados contra uma aplicação hospedada em uma \emph{cloud}. Esta
@@ -34,17 +28,16 @@ arquitetura deverá monitorar o tráfego da aplicação e, quando
 detectar a possível ocorrência de um ataque de DDoS, criará uma nova
 instância desta aplicação, garantindo que nenhum tráfego malicioso a alcance. 
 
+A necessidade de proteger ou mitigar as arquiteturas de rede de ataques de DDoS tem sido reconhecida tanto no meio acadêmico quanto comercial. Segundo \cite{1039856}, três seriam as linhas clássicas de defesa contra ataques de DDoS, compreendendo a \textbf{prevenção}, a \textbf{reação}, ou ambas, na chamada defesa \textbf{híbrida}. A prevenção tenta eliminar a possibilidade de ataques de DDoS, isto é, evita a negação de serviço para os clientes legítimos. A linha de reação detecta o ataque e responde imediatamente, e a abordagem híbrida combina os métodos anteriores, não só prevenindo mas também reagindo à ataques. A maioria dos sistemas de segurança são construídos focados na prevenção de ataques \cite{4429182}. As abordagens clássicas buscam reduzir os riscos a zero, o que é impraticável para todos os tipos de riscos, pois podem ser custosos e complexos.
 
+Atualmente, os sistemas tem se tornado tão complexos que é impossível identificar e corrigir todas as vulnerabilidades antes que elas se tornem ataques ou intrusões e, muitas vezes, impossível de se recuperar de falhas decorrentes. Além disso, a garantia de funcionamento destes sistemas sob condições de ataques ou intrusões têm se tornado uma prioridade. Diversos autores como \cite{Verissimo},
+ \cite{4796927} e \cite{1424871}, têm defendido que as linhas clássicas de defesa não apresentam abordagens que garantam a tolerância a falhas em caso de ataques ou intrusões.
+  
+ Assim, uma nova abordagem foi definida chamada de \textbf{tolerância a intrusão}, a qual lida com sistemas de segurança que garantem o funcionamento dos sistemas mesmo que estejam sob problemas de segurança, minimizando ao máximo os prejuízos atéo retorno ao fluxo normal de funcionamento \cite{Fraga_Powell_1985}. Ao invés de tentar se prevenir de todo tipo de ataque ou intrusão, os sistemas passam a tolerar os problemas simples de segurança e criam mecanismos de controle à intrusão  de forma que eles não causem nenhuma falha ao sistema. Esta abordagem faz uso de replicação ou redundância para garantir os aspectos de tolerância e são aplicados,especificamente, quando a forma de intrusão ou ataque seja diferenciada ou desconhecida. 
+
+Embora os ataques de DDoS ainda persistam e tenham crescido ultimamente, dadas as capacidades das redes, este tipo de ataque pode ser considerado comum e bem conhecido pelos sistemas de segurança existentes executando em arquiteturas comuns. Por este motivo, o seu tratamento pode ser incluído dentro da abordagem clássica. Assim, este trabalho de pesquisa propõe uma arquititetura de mitigação classificada como reativa, pois verifica o tráfego e reage as suas anomalias, e tolerante a falhas por garantir o funcionamento da aplicação mesmo sob ataque, através de replicação da aplicação original que passa a servir apenas como redirecionador de tráfego.
+
+\textbf{
 Este trabalho está divido conforme a descrição que segue. Inicialmente,  
-a primeira Seção apresenta a introdução do tema. Em seguida, a Seção 2 expõem os trabalhos relacionados, seguido pela arquitetura, na Seção 3. A Seção 4 apresenta uma descrição da implementação que realizaremos. Então, a avaliação a ser realizada é descrita na Seção 5. Por fim, a conclusão é apresentada na Seção 6 e o cronograma na Seção 7.
-
-%estão descritos a motivação e o objetivo deste trabalho, expondo o ambiente de problema e solução que será abordado pela pesquisa. NA seção dois, um levantamento dos trabalhos relacionados é descrito para que se posicione quanto as soluções já existentes. O cenário/arquitetura de .....na seção três
-
-%
-%Uma arquitetura de \emph{cloud} pode representar um ambiente propício a ataques por ser usado por diversas pessoas de diversas organizações com suas aplicações e sem o menor controle ou entendimento das configurações ou rede envolvida.
-%
-%Nos trabalhamos com o targeted attack????
-%In a tar-
-%geted attack, an adversary wants to gain a critical mass in a
-%specific subnet, for example, to attack a specific application
-%hosted in that subnet.
+a primeira Seção apresenta a introdução do tema. Em seguida, a Seção 2 expõem os trabalhos relacionados, seguido pela arquitetura proposta, na Seção 3. A Seção 4 apresenta uma descrição da implementação realizada. Então, a avaliação a ser realizada é descrita na Seção 5. Por fim, a conclusão é apresentada na Seção 6 e o cronograma na Seção 7.
+}
