@@ -10,14 +10,13 @@ Uma particularidade interessante do \emph{framework} RoR é a existência de um 
 
 A \emph{blacklist} em si e diversas outras variáveis de controle serão gerenciadas pela base de dados em \emph{cloud}~\cite{redis}. Esta base de dados é famosa pela sua simplicidade e eficiência. Ela basicamente mapeia \textbf{chave} e \textbf{dado}, oferecendo tempos de escrita e leitura correspondentes à \emph{hashing}. Desta forma, uma possibilidade para a implementação da \emph{blacklist} é o uso do Redis, utilizando o IP de um cliente como chave, e o tempo que este cliente permanecerá bloqueado como dado. Por ser, abstratamente, um mecanismo de \emph{hashing}, o tempo de checagem por um cliente será O(1), o que é excelente para um mecanismo que vai filtrar todo tráfego que chega à aplicação. Uma visão estruturada das funções realizadas pela arquitetura proposta é descrita no diagrama de fluxo ilustrado na Figura~\ref{fig:dfd}
 
-%\begin{figure}[t!]
-%	\centering
-%	\includegraphics[width=0.40\textwidth]{images/dfd.eps}
-%	% \caption{bla}
-%	\hskip 1cm
-%	\caption{Funções da arquitetura de mitigação de DDoS}
-%	\label{fig:dfd}
-%\end{figure}
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.40\textwidth]{images/dfd.eps}
+	\hskip 1cm
+	\caption{Funções da arquitetura de mitigação de DDoS}
+	\label{fig:dfd}
+\end{figure}
 
 
 
