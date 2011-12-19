@@ -1,0 +1,41 @@
+%!TEX root = ./proposta3.tex
+
+<<<<<<< HEAD
+Para explorar e validar a proposta deste trabalho foram realizados experimentos e os resultados analisados sobre aspectos tempo de resposta e \emph{overhead}. Primeiramente, foi avaliado o impacto da mitigação de DDoS no tempo de resposta com relação à dimensão do ataque e, em seguida, o \emph{overhead} introduzido pelo mecanismo.
+=======
+Para explorar e validar a proposta deste trabalho foram realizadas simulações e os resultados analisados sobre aspectos de desempenho e \emph{overhead}. Primeiramente, foi avaliado o impacto da mitigação de DDoS em tempo de resposta e em seguida, a taxa de resposta as requisições. Como pode ser obervado na Figura \ref{fig:imp_sem_black}, o gráfico com uso da arquitetura proposta mostra a redução no tempo de atendimento as requisições legítimas em comparação ao gráfico da esquerda que mostra o tempo gasto para atender o mesmo número de requisições originadas. Tal comportamento se deve ao fato de que com o uso da solução, somente tráfego legítimo é direcionado a aplicação  
+
+Outra métrica utilizada para 
+>>>>>>> 4f63cb9bba1f046890a1d35a4c51e951e2932a02
+
+quantidade de páginas recebidas com sucesso, só temos perdas (por causa de timeouts) quando não usamos a BlackList e o servidor tenta responder mandando a página pro atacante, que descarta ela sem nem ver e continua atacando
+
+
+foi analisado o \emph{overhead} causado pela arquitetura proposta em relação a execução normal da aplicação. O gráfico \ref{fig:overhead} demonstra que a solução causa um impacto insignificante na execução 
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.55\textwidth]{images/overhead.eps}
+%\caption{Impacto daTempo de resposta para clientes legítimos}
+%\label{fig:imp_sem_black}
+%\end{figure}
+
+Primeiramente foi analisado o impacto que um ataque de DDoS pode causar no cenário de avaliação, conforme os dados apresentados no gráfico \ref{fig:imp_sem_black} que mostra o tempo de resposta em segundos para clientes legítimos
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.55\textwidth]{images/imp_sem_black.eps}
+\caption{Tempo de resposta para clientes legítimos}
+\label{fig:imp_sem_black}
+\end{figure}
+
+http://cl.ly/1m1m333S0S3d443x3c3P -> overhead
+
+
+
+http://cl.ly/2i3t0d131c1R3O433e1K -> tempo de resposta em segundos para clientes legítimos, legenda eixo X (25/50/75/100) indica quantos processos de ataque DDoS sao executados SIMULTANEAMENTE em cada atacante (sao 8 atacantes)
+
+
+
+http://cl.ly/1w0c383v3w3j0u01391L -> quantidade de páginas recebidas com sucesso, só temos perdas (por causa de timeouts) quando não usamos a BlackList e o servidor tenta responder mandando a página pro atacante, que descarta ela sem nem ver e continua atacando
+
+

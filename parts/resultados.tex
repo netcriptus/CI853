@@ -1,37 +1,38 @@
 %!TEX root = ./proposta3.tex
 
-Para explorar e validar a proposta deste trabalho foram realizadas simulações e os resultados analisados sobre aspectos de desempenho e \emph{overhead}. Primeiramente, foi avaliado o impacto da mitigação de DDoS em tempo de resposta e em seguida, a taxa de resposta as requisições. Como pode ser observado na Figura \ref{fig:imp_sem_black}, o gráfico com uso da arquitetura proposta mostra a redução no tempo de atendimento as requisições legítimas em comparação ao gráfico da esquerda que mostra o tempo gasto para atender o mesmo número de requisições originadas. Tal comportamento se deve ao fato de que com o uso da solução, somente tráfego legítimo é direcionado a aplicação  
+Para explorar e validar a proposta deste trabalho, foram realizados experimentos e os resultados analisados sobre aspectos de desempenho. Primeiramente, foi avaliado o impacto da mitigação de DDoS em tempo de resposta e, em seguida, em relação à taxa de resposta e \emph{overhead}. 
+% SERIA LEGAL MAIS UMA FRASE AQUI
 
-Outra métrica utilizada para 
-
-quantidade de páginas recebidas com sucesso, só temos perdas (por causa de timeouts) quando não usamos a BlackList e o servidor tenta responder mandando a página pro atacante, que descarta ela sem nem ver e continua atacando
-
-
-foi analisado o \emph{overhead} causado pela arquitetura proposta em relação a execução normal da aplicação. O gráfico \ref{fig:overhead} demonstra que a solução causa um impacto insignificante na execução 
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[width=0.55\textwidth]{images/overhead.eps}
-%\caption{Impacto daTempo de resposta para clientes legítimos}
-%\label{fig:imp_sem_black}
-%\end{figure}
-
-Primeiramente foi analisado o impacto que um ataque de DDoS pode causar no cenário de avaliação, conforme os dados apresentados no gráfico \ref{fig:imp_sem_black} que mostra o tempo de resposta em segundos para clientes legítimos
+Como pode ser observado na Figura \ref{fig:blacklistSecs}, o uso da arquitetura proposta reduziu o tempo de resposta às requisições legítimas em comparação ao gráfico à direita, que mostra o tempo gasto para atender o mesmo número de requisições originadas sem o nosso mecanismo. Tal comportamento se deve ao fato de que com o uso da solução, uma \emph{blacklist} impedirá a aplicação de responder o mesmo cliente múltiplas vezes, ainda assim garantindo que o cliente legítimo seja capaz de atingir a nova instância.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.55\textwidth]{images/imp_sem_black.eps}
+\includegraphics[width=0.99\textwidth]{images/blacklistSecs.png}
 \caption{Tempo de resposta para clientes legítimos}
-\label{fig:imp_sem_black}
+\label{fig:blacklistSecs}
 \end{figure}
 
-http://cl.ly/1m1m333S0S3d443x3c3P -> overhead
 
 
 
-http://cl.ly/2i3t0d131c1R3O433e1K -> tempo de resposta em segundos para clientes legítimos, legenda eixo X (25/50/75/100) indica quantos processos de ataque DDoS sao executados SIMULTANEAMENTE em cada atacante (sao 8 atacantes)
+Outra métrica avaliada consiste na taxa de páginas solicitadas recebidas com sucesso, como mostra a Figura~\ref{fig:blacklistTxResp}. Observaram-se  perdas apenas quando não foram utilizadas a filtragem pela \emph{blacklist} e conseqüente redirecionamento. Nestes casos, a aplicação envia uma resposta ao atacante, que descarta esta resposta de imediato, dando continuidade ao ataque. Nota-se que a taxa de entrega sem o uso da \emph{blacklist} é afetada pela ocorrência de \emph{timeouts}.
 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.99\textwidth]{images/blacklistTxResp.png}
+\caption{Tempo de resposta para clientes legítimos}
+\label{fig:blacklistTxResp}
+\end{figure}
 
-http://cl.ly/1w0c383v3w3j0u01391L -> quantidade de páginas recebidas com sucesso, só temos perdas (por causa de timeouts) quando não usamos a BlackList e o servidor tenta responder mandando a página pro atacante, que descarta ela sem nem ver e continua atacando
+Por fim, foi analisado o \emph{overhead} causado pela arquitetura proposta em relação a execução normal da aplicação. O gráfico \ref{fig:overhead} demonstra que a solução causa um impacto insignificante na execução. A parte verde do gráfico denota o tempo gasto em $ms$ pelo enfileiramento das requisições dos atacantes. O \emph{overhead} causado pelo mecanismo proposto é observado na linha preta, acima da superfície verde. Neste gráfico, pode-se notar 4 patamares diferentes no tempo gasto para o enfileiramento das requisições. Durante o tempo entre 11:10 e 11:17, os nós atacantes estavam executando 100 instâncias do \emph{script de ataque.} No instante entre 11:17 e 11:30, 75 instâncias, entre 11:30 e 11:40, 50 instâncias e, por fim, entre 11:40 e 11:45, 25 instâncias.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=8cm]{images/overhead-p1.pdf}
+  \includegraphics[height=8cm]{images/overhead-p2.pdf}
+  \caption{Overhead em $ms$ causado pela solução}
+	\label{fig:overhead}
+\end{figure}
 
 
