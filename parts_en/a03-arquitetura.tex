@@ -1,36 +1,30 @@
-%!TEX root = ./proposta3.tex
+%!TEX root = ./proposta.tex
 
+A Cloud architecture involves communication among countless components through the Web Service's Application Programming Interface (API). The users of this architecture don't know and do not need to know about the localization of their data or applications they wish to use, but they depend on the present security level, which is a concern topic for administrators. Security in Clouds concern data security and network security, according to \cite{Dhage:2011:IDS:1980022.1980076}. 
 
-Uma arquitetura em \emph{cloud} envolve a comunicação entre inúmeros componentes através de APIs (\emph{Application Programing Interface}) de serviços web. Os usuários desta arquitetura não sabem e não precisam saber sobre a localização de seus dados ou as aplicações que desejem utilizar, porém precisam aceitar e dependem  dos níveis de segurança vigentes, que são tópicos preocupantes para os administradores.
-A segurança em \emph{cloud} compreende as áreas de segurança de dados e da rede, segundo \cite{Dhage:2011:IDS:1980022.1980076}. 
+While an attack against data affects a restrict number of users, an attack against the network compromises many users at the same time. DDoS attacks against a Cloud are attacks against the network availability, and are of critical matter.
 
-Enquanto um ataque em dados afeta um número restrito de usuários, um ataque na rede pode comprometer diversos usuários simultaneamente. Como ataques de DDos em uma \emph{cloud} compreendem um ataque à segurança em rede, eles são de importância crítica.  
-%Um dos mais importantes fatores para detectar ataques de DDoS é encontrar a correlação entre diferentes fluxos para um mesmo destino.
-%
-Com a nova infraestrutura de recursos criada pelas \emph{clouds}, existe a possibilidade de se mover fisicamente uma aplicação para outro endereço quando ela é atacada por DDoS. Com isso, pode se garantir tolerância à falhas e conservação de recursos despendidos, pois este novo endereço só será conhecido por solicitantes legítimos.
+Due to the new infrastructure of resources created by the Clouds, there is the possibility of moving physically an application to another address, while it is under a DDoS attack. Therefore, fault-tolerance and resources conservation can be obtained, since this new address will only be known by authentic clients.
 
-Este trabalho propõe uma arquitetura para mitigar ataques de DDoS em \emph{clouds} de forma autônoma e independente. As diferenças desta para outras propostas se concentram na independência da aplicação hospedada, em prover acurácia na filtragem de tráfego legítimo, por não onerar financeiramente o uso dos recursos, e por minimizar os problemas causados pelo ataque sem intervenção humana.
-%
-A arquitetura proposta poderá ser utilizada por qualquer aplicação web hospedada em uma \emph{cloud} que, ao sofrer indícios de um ataque DDoS, filtra o tráfego legítimo e encaminha apenas este para uma nova instância da mesma aplicação. 
+This work proposes an architecture to mitigate DDoS attacks in Clouds in a autonomous and independent way. The differences between this proposal to other are majorly in the independence of the hosted application, in providing accuracy in the filter for authentic traffic, for not financially burden the resources use and for minimize the problems caused by the attack without human intervention. The proposed architecture could be used by any web application hosted on a Cloud, that, when notice evidence of a DDoS attack, will filter the authentic traffic and redirects only those to a new instance of the same application.
+
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.55\textwidth]{images/arq.eps}
-\caption{Ilustração da proposta de arquitetura para mitigação de ataques DDoS}
+\caption{Illustration of the proposed architecture for mitigating DDoS attacks}
 \label{fig:arq}
 \end{figure}
 
-Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo geral chamado de Gerenciador de Tráfego (GT), que não se comunica diretamente com a aplicação. Vale ressaltar que a instância do banco de dados é exterior às demais instâncias da \emph{cloud}, pelo fato de que este banco de dados também está nas nuvens, e pode ser acessado de qualquer outra instância \emph{cloud}. As operações realizadas pelo módulo GT são divididas em quatro submódulos:
-% GF virou GT XXXXX
+This architecture, illustrated in the figure \ref{fig:arq}, is composed by a general module called Traffic Manager (TM), that does not communicates directly to the application. It is worth noticing that the database instance must be outside any other instance in the Cloud, due to the fact that this database, which is also in the Cloud, may be reached from any other application instance in the Cloud. The operations performed by the TM module are divided in four submodules.
 
+The Traffic Analyzer (TA) submodule watches the behavior of the incoming traffic proactively. Focusing on the approximation of the traffic amount and CPU use on the host, this submodule performs probes to identify the existence of a DDoS attack. In case it is detected, the New Application Instantiator (NAI) module is activated. The NAI will create a new instance of the application in another server in the Cloud, which will consequently have a different IP address\footnote{When the instance is created, the old one will be deactivated. The first instance in the Cloud will only redirect traffic}. Thus, the Traffic Redirector (TR) submodule will receive and process all the incoming traffic, responding with a redirect to the new instance of the application. We're assuming that DDoS attacks do not interpret any responses from the server, since its effectiveness would be diminished if it did. This way, only authentic clients will be redirected to the new application.
 
-O submódulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este submódulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o submódulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente\footnote{Com a criação da nova instância da aplicação, a antiga é desativada. A primeira instância da \emph{cloud} servirá apenas para redirecionar o tráfego}. Com isso, o submódulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionados à nova aplicação.
+When a client is redirected to the new instance, this client's address, whether it is authentic or not, will be inserted into a blacklist. The clients in this blacklist will have their requests ignored, intending to reduce the overhead in the server. Nonetheless, since the legitimate client was informed of the new application before its address was inserted in this list, that will not be a problem, for it will have access to the new application. All the entries in the blacklist will have a limited time to live (TTL), since a response can be lost. The TTL for each entry will increase exponentially, in order to reduce even more the overload. It is the Blacklist Manager (BM) duty to take an address out of the blacklist, and also to calculate the exponentially growing TTL.
 
-Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista terão suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo foi informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Serão empregadas entradas com tempo de validade nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
+However, in order to prevent that this control stops the access of the legitimate clients in their future requests, the client, when redirected, shall have this new address stored as a cookie in their computer. This procedure makes sure only authentic clients have knowledge of the new address of the application, and thus the traffic redirection may be recursively repeated, until a maximum predetermined level.
 
-Contudo, para prevenir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente, ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookies} em sua máquina. Este procedimento garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicação, dado que atacantes de DDoS não irão manter \emph{cookies}. Por fim,  tal processo de reinstanciação de aplicação e redirecionamento de tráfego pode ser repetido recursivamente, até um dado número máximo de redirecionamentos.
-
-A Figura~\ref{fig:cen} ilustra um cenário sob ataque de DDoS, sendo que os clientes são representados pelos ícones dos diversos navegadores, e a nave é o logo da aplicação LOIC (\emph{Low Orbit Ion Cannon}). À esquerda, todos eles enviam seu tráfego para o que imaginam ser a instância da aplicação. Considerando um cenário sob ataque, a aplicação será replicada, e a sua instância original servirá para redirecionar o tráfego legítimo até a aplicação nova. À direita, é ilustrado o resultado do redirecionamento: clientes genuínos conseguem atingir a instância nova da aplicação, enquanto os atacantes mantém o ataque na antiga instância de \emph{cloud}, que agora opera apenas redirecionando tráfego.
+The figure~\ref{fig:cen} illustrates a scenario under DDoS attack, where the clients are represented by icons of many internet browsers, and the spaceship is the icon of the application called LOIC -- Low Orbit Ion Cannon. To the left, all of them send their traffic to what they imagine is the instance of the application. Considering a situation where the application is under attack, it will be replicated, and the original instance will redirect the legitimate traffic to the new application. To the right, the redirection result is shown: genuineclients can reach the new instance of the application, while the attackers keep attacking the old instance, that now operates only redirecting traffic.
 
 
 \begin{figure}[t!]
@@ -39,6 +33,6 @@ A Figura~\ref{fig:cen} ilustra um cenário sob ataque de DDoS, sendo que os clie
 	% \caption{bla}
 	\hskip 1cm
 	\includegraphics[width=0.40\textwidth]{images/an2.eps}
-	\caption{Comportamento do tráfego em um cenário sob ataque}
+	\caption{traffic behavior under an attack scenario}
 	\label{fig:cen}
 \end{figure}
