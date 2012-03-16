@@ -1,4 +1,4 @@
-FILE=proposta
+FILE=wgrs12-v1
 LATEX=${FILE}.tex
 DVI=${FILE}.dvi
 PS=${FILE}.ps
