@@ -11,6 +11,7 @@
 \usepackage[tight,footnotesize]{subfigure}
 \usepackage{stfloats}
 \usepackage{enumerate}
+% \usepackage[left=3cm,top=3cm,right=3cm,bottom=3cm]{geometry}
 
 
 % correct bad hyphenation here
@@ -19,10 +20,15 @@
 
 \begin{document}
 
+%\title{Arquitetura para Mitigação de Ataques DDoS em Nuvem}
 \title{Um mecanismo para mitigar ataques DDoS \\em serviços sob nuvem}
 
 
 \author{
+%Cinara Menegazzo\inst{1},
+%Fernando Bernardelli\inst{1}, \\
+%Fernando Gielow\inst{1},
+%Nadine Pari\inst{1},
 Cinara Menegazzo, Fernando Bernardelli, \\
 Fernando Gielow, Nadine Pari
 }
@@ -36,7 +42,8 @@ NR2 - Núcleo de Redes Sem Fio e Redes Avançadas\\
 \maketitle
 
 \begin{abstract}
-Distributed Denial of Service (DDoS) attacks are often neglected since they only cause an interruption of the normal functioning of the available resources. However, when those attacks take place on e-commerce applications, a pause in such services may represent large financial loss. With the advent of the Future Internet and architectures like Cloud Computing, mitigating DDoS attacks giving more resources to the applications has become a feasible alternative, but entails the Economic DDoS problem. This paper presents a mechanism to mitigate DDoS attacks against a Cloud hosted application. Such mechanism is based on the idea of instantiating a replica of the application - simple operation for a Cloud - and redirecting only authentic queries to this replica. The mechanism is innovator because there is no need to identify the attackers and, even so, get to filter only authentic traffic, without extra overhead and potential categorization errors that could be introduced when trying to identify the clients.
+Distributed Denial of Service (DDoS) attacks are often neglected since they only cause an interruption of the normal functioning of the available resources.However, when those attacks take place on e-commerce applications, a pause in such services may represent large financial loss. With the advent of the Future Internet and architectures like Cloud Computing, mitigating DDoS attacks giving more resources to the applications has become a feasible alternative, but entails the Economic DDoS problem. This article presents a mechanism to mitigate DDoS attacks against a Cloud hosted application. Such mechanism is based on the idea of instantiating a replica of the application - simple operation for a Cloud - and redirecting only authentic queries to this replica. The mechanism is innovator because there is no need to identify the attackers and, even so, get to filter only authentic traffic, without extra overhead and potential categorization errors that could be introduced when trying to identify the clients.
+%\input{parts/a00-resumo}
 \end{abstract}
 
 \begin{resumo}
@@ -47,7 +54,6 @@ Distributed Denial of Service (DDoS) attacks are often neglected since they only
 \section{Introdução}
 \input{parts/a01-introducao}
 
-\textbf{******* O artigo só foi revisado até aqui ********}
 
 \section{Trabalhos Relacionados}
 \input{parts/a02-trabalhos-relacionados}
@@ -71,6 +77,16 @@ Distributed Denial of Service (DDoS) attacks are often neglected since they only
 \section{Conclusão}
 \input{parts/a07-conclusao}
 
+
+%\section{Cronograma}
+%\input{parts/a08-cronograma}
+
+%\section{Acknowledgements}
+%\input{parts/a09-acknowledgements}
+
+
+% \newpage
+% \bibliographystyle{unsrt}
 
 \bibliographystyle{templates/sbc}
 \bibliography{parts/proposta}
