@@ -12,7 +12,7 @@ Neste \emph{framework}, todo pacote%, malicioso ou não,
 Entretanto, a identificação dos clientes passados não é tão trivial. Além do pequeno \emph{overhead} gerado pela verificação, endereços IPs são normalmente dinâmicos e a exigência da realização de \emph{login} para a identificação não é possível, dado que o ataque de DDoS pode a impossibilitar.
 
 
-Em \cite{Bakshi:10}, os ataques são tratados através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, a proposta busca identificar os atacantes através de PINGs: caso um cliente suspeito de ser atacante não responda ao PING, ele é considerado como um atacante, de fato. Desta maneira, apenas os clientes que responderem ao PING serão 
+Em \cite{Bakshi:10}, os ataques são tratados através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, a proposta busca identificar os atacantes através de PINGs: caso um cliente suspeito de ser atacante não responda ao PING, ele é considerado como um atacante. Assim, apenas os clientes que responderem ao PING serão 
 redirecionados para a nova instância da aplicação. Entretanto, tal abordagem depende da premissa que atacantes jamais responderão a PINGs e que clientes genuínos sempre responderão, o que nem sempre condiz com a realidade.
 
 
