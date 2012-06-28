@@ -21,25 +21,22 @@
 \begin{document}
 
 %\title{Arquitetura para Mitigação de Ataques DDoS em Nuvem}
-\title{Um mecanismo para mitigar ataques DDoS \\em serviços sob nuvem}
+\title{Um Mecanismo para Mitigar Ataques DDoS\\ em Serviços Web sob Nuvem}
 
 
 \author{
-%Cinara Menegazzo\inst{1},
-%Fernando Bernardelli\inst{1}, \\
-%Fernando Gielow\inst{1},
-%Nadine Pari\inst{1},
 Cinara Menegazzo, Fernando Bernardelli, \\
-Fernando Gielow, Nadine Pari
+Fernando Gielow, Nadine Pari, Aldri Santos
 }
    
 \address{Departamento de Informática -- Universidade Federal do Paraná\\
-NR2 - Núcleo de Redes Sem Fio e Redes Avançadas\\
-  Caixa Postal 19.081 -- 81.531-980 -- Curitiba -- PR -- Brasil
-  \email{\{cmenegazzo,fcb06,fhgielow,nelpari,michele\}@inf.ufpr.br}
+NR2 - Núcleo de Redes Sem Fio e Redes Avançadas -- Curitiba -- Brasil
+  \email{\{cmenegazzo,fcbernardelli,fhgielow,nelpari,aldri\}@inf.ufpr.br}
 }     
 
 \maketitle
+
+{\footnotesize
 
 \begin{abstract}
 Distributed Denial of Service (DDoS) attacks are often neglected since they only cause an interruption of the normal functioning of the available resources.However, when those attacks take place on e-commerce applications, a pause in such services may represent large financial loss. With the advent of the Future Internet and architectures like Cloud Computing, mitigating DDoS attacks giving more resources to the applications has become a feasible alternative, but entails the Economic DDoS problem. This article presents a mechanism to mitigate DDoS attacks against a Cloud hosted application. Such mechanism is based on the idea of instantiating a replica of the application - simple operation for a Cloud - and redirecting only authentic queries to this replica. The mechanism is innovator because there is no need to identify the attackers and, even so, get to filter only authentic traffic, without extra overhead and potential categorization errors that could be introduced when trying to identify the clients.
@@ -49,6 +46,8 @@ Distributed Denial of Service (DDoS) attacks are often neglected since they only
 \begin{resumo}
 \input{parts/a00-resumo}
 \end{resumo}
+
+}
 
 %\pagebreak
 \section{Introdução}
@@ -68,7 +67,7 @@ Distributed Denial of Service (DDoS) attacks are often neglected since they only
 \section{Avaliação}
 \input{parts/a05-avaliacao}
 
-\subsection{Cenários}
+% \subsection{Cenários}
 \input{parts/a06-cenarios}
 
 \subsection{Resultados}
@@ -88,6 +87,7 @@ Distributed Denial of Service (DDoS) attacks are often neglected since they only
 % \newpage
 % \bibliographystyle{unsrt}
 
+{\footnotesize
 \bibliographystyle{templates/sbc}
-\bibliography{parts/proposta}
+\bibliography{parts/proposta}}
 \end{document}
