@@ -5,11 +5,11 @@
 % 
 % A maioria das métricas para calcular o impacto de ataques DDoS estão relacionadas com as medidas de eficiência dos padrões de defesa \cite{4809152}. Atualmente, são consideradas estratégias de medição da quantidade de tráfego legítimo que chega até a aplicação. Outros trabalhos tem se concentrado na medida do tempo de resposta para avaliar a eficiência de uma solução. \cite{Mirkovic:2007:TUM:1281700.1281708} utiliza um modelo baseado em \emph{threshold} como métrica para aferir o impacto de DDoS. Quando uma medida excede este \emph{threshold}, ocorre a  indicação da baixa qualidade do serviço. Esta medida é indicada para aplicações fim-a-fim, como o HTTP.
 
-A avaliação da nossa arquitetura consiste principalmente na análise
-da capacidade do servidor em atender novas requisições, sendo que o atendimento pode consistir apenas no redirecionamento. 
+A avaliação da arquitetura proposta consiste na análise
+da capacidade do servidor em atender novas requisições, sendo que o atendimento pode ser apenas o redirecionamento. 
 Se o ataque de DDoS for devidamente
-mitigado, as requisições de atacantes serão ignoradas, após a inclusão do requisitante na \emph{blacklist}. Assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
-para a nova instância e garantirá que eles terão acesso direto nas próximas requisições. 
+mitigado, as requisições dos atacantes serão ignoradas, após a sua inclusão na \emph{blacklist}. Assim, o servidor na \emph{cloud} deverá ser capaz de redirecionar apenas clientes legítimos 
+para a nova instância e garantir que eles terão acesso direto nas próximas requisições. 
 %
 % Portanto, de acordo com as métricas especificadas por \cite{4600003}, este trabalho de pesquisa foi avaliado pelo uso de métricas como o tempo de resposta do servidor para requisições atendidas, a taxa de requisições atendidas em relação ao número de clientes e a carga gerada pelos módulos da arquitetura de acordo com o número de clientes \footnote{O termo ``clientes'', usado neste parágrafo engloba tanto clientes legítimos quanto atacantes.}. 
 %
