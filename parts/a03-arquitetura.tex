@@ -10,17 +10,35 @@ Este trabalho propõe uma arquitetura para mitigar ataques de DDoS em \emph{clou
 Esta arquitetura, ilustrada na Figura \ref{fig:arq}, é composta por um módulo geral chamado de Gerenciador de Tráfego (GT), que não se comunica diretamente com a aplicação. Tal módulo possui os submódulos INA, GB, AT e RT. Vale ressaltar que a instância do banco de dados (BD) é exterior às demais instâncias da \emph{cloud}, pelo fato de que este banco de dados também está nas nuvens, e pode ser acessado de qualquer outra instância \emph{cloud}. As operações realizadas pelo módulo GT são divididas em quatro submódulos.
 % GF virou GT XXXXX
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{images/arq.eps}
-\caption{Arquitetura para mitigação de ataques DDoS}
-\label{fig:arq}
+\begin{figure}[t!]
+  \centering
+  \begin{minipage}[b]{0.59\linewidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/arq.eps}
+	\caption{Arquitetura de mitigação de DDoS}
+	\label{fig:arq}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\linewidth}
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/ddos-dir.pdf}
+	\caption{Fluxo de tráfego}
+	\label{fig:traf-ddos}
+  \end{minipage}
+
 \end{figure}
 
-O submódulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este submódulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o submódulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente. %\footnote{Com a criação da nova instância da aplicação, a antiga é desativada. A primeira instância da \emph{cloud} servirá apenas para redirecionar o tráfego}.
-Com isso, o submódulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos serão, de fato, redirecionados à nova aplicação.
 
-Ao redirecionar algum cliente para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista têm suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo é informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Entradas com tempo de validade são empregadas nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.45\textwidth]{images/arq.eps}
+% \caption{Arquitetura para mitigação de ataques DDoS}
+% \label{fig:arq}
+% \end{figure}
+
+O submódulo AT observa o comportamento do tráfego de entrada para a aplicação de forma pró-ativa. Focando-se na estimativa de quantidade de tráfego e de processamento no servidor, este submódulo realiza medição para verificar a existência de um possível ataque DDoS. Caso detectado, o submódulo INA é ativado. O INA criará uma nova instância da aplicação em outro servidor na \emph{cloud}, consequentemente com um endereço IP diferente. %\footnote{Com a criação da nova instância da aplicação, a antiga é desativada. A primeira instância da \emph{cloud} servirá apenas para redirecionar o tráfego}.
+Com isso, como visto na Figura~\ref{fig:traf-ddos}, o submódulo RT passará a tratar todo o tráfego de entrada, respondendo com um redirecionamento para a nova instância da aplicação. Parte-se do princípio que atacantes DDoS não interpretam as respostas obtidas do servidor, pois se interpretarem, sua eficiência é reduzida. Desta maneira, apenas os clientes legítimos (Nós \emph{C} na figura) serão, de fato, redirecionados à nova aplicação, enquanto os nós atacantes não passarão pelo RT.
+
+Ao redirecionar algum cliente legítimo para a nova instância, o endereço deste cliente, seja ele legítimo ou não, será adicionado em uma \emph{blacklist}. Os clientes presentes nesta lista têm suas requisições descartadas, a fim de reduzir o custo de processamento de respostas no servidor. Entretanto, como o cliente legítimo é informado antes de seu endereço entrar nesta \emph{blacklist}, isso não será um problema, pois ele já terá acesso à nova instância enviando nova requisição. Entradas com tempo de validade são empregadas nesta \emph{blacklist}, dado que respostas podem ser perdidas. O tempo de validade na lista aumentará exponencialmente, para diminuir ainda mais a sobrecarga. Cabe ao GB, o papel de adicionar e gerenciar a saída de endereços de clientes à \emph{blacklist}, assim como, o tempo de validade da entrada que aumenta exponencialmente.
 
 % Contudo, para prevenir que este controle impeça o acesso de clientes legítimos nas próximas requisições, o cliente, ao ser direcionado para a nova instância, terá este endereço armazenado na forma de \emph{cookies} em sua máquina. Este procedimento garante que apenas clientes legítimos tenham conhecimento do novo endereço da aplicação, dado que atacantes de DDoS não irão manter \emph{cookies}. Por fim,  tal processo de reinstanciação de aplicação e redirecionamento de tráfego pode ser repetido recursivamente, até um dado número máximo de redirecionamentos.
 
