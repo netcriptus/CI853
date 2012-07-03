@@ -14,7 +14,7 @@ Entretanto, a identificação dos clientes antigos não é tão trivial. Além d
 %
 Em \cite{Bakshi:10}, os ataques são tratados através da criação de uma nova instância da aplicação. Uma vez que um ataque DDoS é detectado, o mecanismo proposto busca identificar os atacantes através de PINGs: caso um cliente suspeito de ser atacante não responda ao PING, ele é considerado como um atacante, não sendo redirecionado para a nova instância da aplicação. 
 %. Assim, apenas os clientes que respondem ao PING são redirecionados para a nova instância da aplicação. 
-Entretanto, essa solução assume que sempre e apenas clientes genuínos responderão a PINGs, o que nem sempre condiz com a realidade.
+Entretanto, essa solução assume que sempre e apenas clientes genuínos responderão a PINGs, o que as vezes não condiz com a realidade.
 
 
 
@@ -26,7 +26,7 @@ Entretanto, essa solução assume que sempre e apenas clientes genuínos respond
 
 % \hyphenation{i-den-ti-fi-ca-ção}
 
-A eficácia desses esquemas de mitigação depende diretamente da capacidade iden-tificação ou filtragem dos clientes legítimos. 
+A eficácia desses esquemas de mitigação depende diretamente da capacidade de identificação ou filtragem dos clientes legítimos. 
 %
 A solução WebSoS \cite{Stavrou:2005:WOS:1090583.1648614} % após a detecção do ataque. 
 oferece uma filtragem robusta de tráfego atacante e bloqueio de requisições~não aprovadas, formando assim um \emph{overlay} seguro que mitiga DDoS em servidores web. O servidor utiliza mecanismos de autenticação criptográfica e um teste gráfico de Turing \cite{Dietrich00analyzingdistributed} para diferenciar clientes humanos de \emph{scripts} de ataque. Estes procedimentos, segundo os testes dos autores, não sobrecarregam o funcionamento do serviço, porém exigem que os roteadores localizados no perímetro do servidor sejam reconfigurados, o que é inviável para arquiteturas de \emph{cloud}.

@@ -5,17 +5,21 @@ A arquitetura do \emph{framework}~\cite{ror} é completamente baseada no paradig
 %
 % Como \emph{framework}, foi utilizado o Ruby on Rails (RoR),  por ser baseado no paradigma \emph{Model View Controler}, que facilita a divisão necessária para os módulos da arquitetura. 
 
-Considerando o RoR, o submódulo analizador de tráfego (AT) da arquitetura corresponde a um controlador. Uma requisição à aplicação será interceptada por esse componente de controle, que realizará a medição de estatísticas, e imediatamente acionará o controlador que corresponde ao funcionamento da aplicação em si. Deve-se notar, contudo, que o tempo despendido neste controlador é ínfimo. Em outras implementações, caso se perceba que o tempo afete o funcionamento do mecanismo de mitigação, este processamento poderia ainda ser realizado em segundo plano. A Figura~\ref{fig:dfd} apresenta um fluxograma da implementação realizada.
+Considerando o RoR, o submódulo analizador de tráfego (AT) da arquitetura corresponde a um controlador. Assim, uma requisição à aplicação será interceptada por esse componente de controle, que realizará a medição de estatísticas, e imediatamente acionará o controlador que corresponde ao funcionamento da aplicação em si. Deve-se notar, contudo, que o tempo despendido neste controlador é ínfimo. 
+%
+A Figura~\ref{fig:dfd} apresenta um fluxograma da implementação realizada. 
+%
+Em outras implementações, caso se perceba que o tempo afeta o funcionamento do mecanismo de mitigação, este processamento poderia ainda ser realizado em segundo plano. 
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=0.90\textwidth]{images/dfd-graffle-2.pdf}
+	\includegraphics[width=0.84\textwidth]{images/dfd-3.pdf}
 	% \hskip 1cm
 	\caption{Operações da implementação para a mitigação}
 	\label{fig:dfd}
 \end{figure}
 
-Caso o AT detecte a existência de um possível ataque, uma nova instância \emph{cloud} é criada pelo submódulo INA e a aplicação é replicada para esta instância, paralisando a aplicação original, que passa a responder apenas como redirecionador. O processo de reinstanciação da aplicação na implementação realizada consiste da existência prévia de uma segunda aplicação, inicialmente sem nenhum recurso alocado. %Entretanto, embora esta instância estaria pronta para que seus processos sejam escalados assim que necessário, esta abordagem não se comporta adequadamente no cenário de reinstanciação recursiva. A segunda abordagem envolve a hospedagem do projeto em um repositório do GitHub, que poderá ser clonado para a especificação da segunda instância a partir do código Ruby. 
+Quando o AT detectar a existência de um possível ataque, uma nova instância \emph{cloud} é criada pelo submódulo INA e a aplicação é replicada para esta instância, paralisando a aplicação original, que passa a responder apenas como redirecionador. O processo de reinstanciação da aplicação na implementação realizada consiste da existência prévia de uma segunda aplicação, inicialmente sem nenhum recurso alocado. %Entretanto, embora esta instância estaria pronta para que seus processos sejam escalados assim que necessário, esta abordagem não se comporta adequadamente no cenário de reinstanciação recursiva. A segunda abordagem envolve a hospedagem do projeto em um repositório do GitHub, que poderá ser clonado para a especificação da segunda instância a partir do código Ruby. 
 
 Uma particularidade interessante do \emph{framework} RoR é a existência de um arquivo de rotas. A implementação do submódulo redirecionador de tráfego (RT) é realizada em cima deste arquivo, chamado \emph{routes.rb}. Para a exibição de qualquer página dinâmica da aplicação, o arquivo de rotas é inevitavelmente chamado. Desta forma, ele é utilizado para a adição de clientes na \emph{blacklist} e respectiva filtragem dos clientes bloqueados pelo gerenciador da \emph{blacklist} (GB). No redirecionamento do tráfego para uma nova instância, uma entrada será adicionada, bloqueando o cliente em questão por determinado tempo.
 
