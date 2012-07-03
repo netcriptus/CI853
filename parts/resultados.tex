@@ -2,10 +2,10 @@
 
 
 
-Para explorar e validar a proposta deste trabalho, foram realizados experimentos de acordo com as métricas especificadas em \cite{4600003}. Primeiro, foi avaliado o impacto da mitigação de DDoS em tempo de resposta e, em seguida, em relação à taxa de resposta e \emph{overhead}. 
+Para explorar e validar a nossa proposta, foram realizados experimentos de acordo com as métricas especificadas em \cite{4600003}. Primeiro, foi avaliado o impacto da mitigação de DDoS em tempo de resposta e, em seguida, em relação à taxa de resposta e \emph{overhead}. 
 %
 %
-Como observado na Figura \ref{fig:blacklistSecs}, com um intervalo de confiança de 95\%, o uso da arquitetura proposta, gráfico à esquerda, reduziu o tempo de resposta às requisições legítimas em comparação ao gráfico à direita, que mostra o tempo gasto para atender o mesmo número de requisições originadas sem o nosso mecanismo. Tal comportamento ocorre porque com o uso da arquitetura, a \emph{blacklist} impedirá uma aplicação de responder o mesmo cliente múltiplas vezes, garantindo ainda assim que o cliente legítimo seja capaz de atingir a nova instância.
+Como observado na Figura \ref{fig:blacklistSecs}, com um intervalo de confiança de 95\%, o uso da arquitetura proposta, gráfico à esquerda, reduziu o tempo de resposta às requisições legítimas em comparação ao gráfico à direita, que mostra o tempo gasto para atender o mesmo número de requisições originadas sem o nosso mecanismo. Tal comportamento ocorre porque com o uso da arquitetura, a \emph{blacklist} impedirá uma aplicação de responder ao mesmo cliente múltiplas vezes, garantindo ainda assim que o cliente legítimo seja capaz de atingir a nova instância.
 
 \begin{figure}[h!]
 \centering
@@ -17,13 +17,13 @@ Como observado na Figura \ref{fig:blacklistSecs}, com um intervalo de confiança
 
 
 
-Outra métrica avaliada é a taxa de páginas solicitadas recebidas com sucesso, mostrada na Figura~\ref{fig:blacklistTxResp}. Há uma queda no número de respostas apenas quando não foram utilizadas a filtragem pela \emph{blacklist} e o conseqüente redirecionamento. Nestes casos, a aplicação envia uma resposta ao atacante, que descarta esta resposta de imediato, dando continuidade ao ataque. Nota-se que a taxa de entrega sem o uso da \emph{blacklist} é afetada pela ocorrência de \emph{timeouts} de requisições HTTP não respondidas, pois a aplicação fica ocupada com as requisições atacantes.
+Outra métrica avaliada é a taxa de páginas solicitadas recebidas com sucesso, mostrada na Figura~\ref{fig:blacklistTxResp}. Há uma queda no número de respostas apenas quando não foram utilizadas a filtragem pela \emph{blacklist} e o conseqüente redirecionamento. Nestes casos, a aplicação envia uma resposta ao atacante, que descarta esta resposta de imediato, dando continuidade ao ataque. Nota-se que a taxa de entrega sem o uso da \emph{blacklist} é afetada pela ocorrência de \emph{timeouts} de requisições HTTP não respondidas, pois a aplicação permanece ocupada com as requisições atacantes.
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.76\textwidth]{images/blacklistTxResp.png}
-\caption{Tempo de resposta para clientes legítimos}
+\caption{Taxa de respostas do servidor a clientes legítimos}
 \label{fig:blacklistTxResp}
 \end{figure}
 % 
